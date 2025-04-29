@@ -20,7 +20,7 @@ if (mobileMenuButton && mobileMenu) {
       // Create close button
       closeButton = document.createElement("button");
       closeButton.className = "absolute top-5 left-4 z-40";
-      closeButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      closeButton.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M18 6L6 18" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M6 6L18 18" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>`;
@@ -37,8 +37,8 @@ if (mobileMenuButton && mobileMenu) {
         "right-0",
         "bg-white",
         "z-30",
-        "p-4",
-        "pt-16", // Add padding top to make room for close button
+        "pt-12",
+        "pb-4",
         "shadow-lg"
       );
 
@@ -62,8 +62,8 @@ if (mobileMenuButton && mobileMenu) {
       "right-0",
       "bg-white",
       "z-30",
-      "p-4",
-      "pt-16",
+      "pt-12",
+      "pb-4",
       "shadow-lg"
     );
 
@@ -98,18 +98,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         behavior: "smooth",
       });
     }
-  });
-});
-
-// Card hover effects
-const cards = document.querySelectorAll(".card");
-cards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    card.classList.add("scale-105", "transition-transform");
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.classList.remove("scale-105");
   });
 });
 
@@ -177,3 +165,44 @@ if (newsletterForm) {
     }
   });
 }
+
+// Mobile Dropdown Toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileDropdownButtons = document.querySelectorAll(
+    ".mobile-dropdown-button"
+  );
+
+  mobileDropdownButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Toggle the dropdown content
+      const dropdownContent = this.nextElementSibling;
+      dropdownContent.classList.toggle("hidden");
+
+      // Rotate the arrow icon
+      const svg = this.querySelector("svg");
+      if (dropdownContent.classList.contains("hidden")) {
+        svg.classList.remove("rotate-180");
+      } else {
+        svg.classList.add("rotate-180");
+      }
+
+      // Close other dropdowns
+      const allDropdownContents = document.querySelectorAll(
+        ".mobile-dropdown-content"
+      );
+      const allSvgs = document.querySelectorAll(".mobile-dropdown-button svg");
+
+      allDropdownContents.forEach((content, index) => {
+        if (
+          content !== dropdownContent &&
+          !content.classList.contains("hidden")
+        ) {
+          content.classList.add("hidden");
+          allSvgs[index].classList.remove("rotate-180");
+        }
+      });
+    });
+  });
+});

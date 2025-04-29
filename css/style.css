@@ -36,3 +36,44 @@
 .icon-profile:before {
   content: "\e902";
 }
+
+/* Add styles for mobile dropdown */
+.mobile-dropdown-button svg {
+  transition: transform 0.2s ease;
+}
+
+.mobile-dropdown-button svg.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-content {
+  transition: all 0.3s ease;
+}
+
+/* Dropdown animations */
+.group:hover .group-hover\:block {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Swiper pagination customization */
+.swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  opacity: 1;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: #096e1c; /* Primary color */
+}
