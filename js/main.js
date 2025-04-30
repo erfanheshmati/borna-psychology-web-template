@@ -206,3 +206,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Character counter for textarea
+document.addEventListener("DOMContentLoaded", function () {
+  const textarea = document.getElementById("message-textarea");
+  const charCounter = document.getElementById("char-counter");
+
+  if (textarea && charCounter) {
+    // Initialize counter on page load
+    charCounter.textContent = convertToPersianNumerals("0");
+
+    textarea.addEventListener("input", function () {
+      // Convert to Persian numerals
+      const count = textarea.value.length;
+      charCounter.textContent = convertToPersianNumerals(count.toString());
+    });
+  }
+});
+
+// Function to convert English numbers to Persian
+function convertToPersianNumerals(text) {
+  const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+  return text.replace(/[0-9]/g, function (d) {
+    return persianDigits[parseInt(d)];
+  });
+}
