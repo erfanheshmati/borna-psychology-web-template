@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به برنا</title>
+    <meta name="description" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- Tailwind CSS -->
+    <link href=" ./css/output.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href=" ./css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-white min-h-screen">
+    <div class="flex flex-col md:flex-row min-h-screen relative">
+        <!-- Close Button -->
+        <button id="close-button" class="absolute top-4 left-4 z-10 group">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="group-hover:stroke-primary transition-colors" />
+                <path d="M6 6L18 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="group-hover:stroke-primary transition-colors" />
+            </svg>
+        </button>
+
+        <!-- Right side - Signup/Login Form -->
+        <div class="w-full md:w-1/2 p-4 md:p-8 lg:p-12 flex flex-col justify-center">
+            <div class="max-w-md mx-auto w-full">
+                <!-- Logo -->
+                <div class="flex justify-center">
+                    <img src="./assets/images/logo.svg" alt="برنا">
+                </div>
+
+                <!-- Heading -->
+                <h1 class="text-2xl md:text-3xl font-semibold text-center mt-2">
+                    به
+                    <span class="text-[#34DB06]">برنا</span>
+                    خوش آمدید!
+                </h1>
+
+                <!-- Login Form -->
+                <div class="mt-14 space-y-4">
+                    <h2 class="text-xl font-medium text-right mb-2">عضویت یا ورود</h2>
+                    <p class="text-[#3C3D45] mb-4">کد تایید به شماره موبایلی که وارد می‌کنید ارسال خواهد شد.</p>
+
+                    <!-- Phone Input -->
+                    <div class="border border-[#E7E7E8] rounded-lg flex items-center justify-between">
+                        <input type="tel" placeholder="شماره موبایل"
+                            class="w-full text-left placeholder:text-right p-4 focus:outline-none border-0"
+                            id="phone-input" required>
+                        <div class="bg-[#F7F7F8] rounded-l-lg p-4">
+                            <span class="text-[#9D9EA2] font-bold">۹۸+</span>
+                        </div>
+                    </div>
+                    <!-- Phone Error Message Container -->
+                    <div id="phone-error" class="error-container mt-1"></div>
+
+                    <!-- Checkbox -->
+                    <div class="flex items-center justify-start gap-2 mb-6">
+                        <input type="checkbox" id="terms" class="w-5 h-5 border border-[#CECED1] rounded cursor-pointer"
+                            required>
+                        <label for="terms" class="text-[#6D6D74]">
+                            با ورود و ثبت‌نام در سایت، با
+                            <a href="#" class="text-[#1AD042] hover:underline">قوانین برنا</a>
+                            موافقت می‌کنم.
+                        </label>
+                    </div>
+                    <!-- Terms Error Message Container -->
+                    <div id="terms-error" class="error-container -mt-4 mb-2"></div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="login-submit"
+                        class="w-full bg-[#E7E7E8] text-[#CECED1] py-4 px-8 rounded-lg mb-6 disabled:opacity-70 hover:opacity-80 transition-all duration-300 ease-in-out">
+                        تایید و ادامه
+                    </button>
+
+                    <!-- Divider -->
+                    <div class="flex items-center my-6">
+                        <div class="flex-grow border-t border-[#E7E7E8]"></div>
+                        <span class="mx-4 text-[#9D9EA2]">یا</span>
+                        <div class="flex-grow border-t border-[#E7E7E8]"></div>
+                    </div>
+
+                    <!-- Google Login -->
+                    <button type="button"
+                        class="w-full border border-primary-dark hover:border-[#1AD042] transition-colors text-[#147F38] py-4 px-8 rounded-lg flex items-center justify-center gap-2">
+                        <img src="./assets/images/google-logo.svg" alt="Google" class="w-6 h-6">
+                        ورود با گوگل
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left side - Image -->
+        <div class="hidden md:block md:w-1/2 bg-cover bg-center"
+            style="background-image: url('./assets/images/login-bg.png');">
+            <div class="h-full w-full bg-white bg-opacity-15 flex items-center justify-center"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script src="./js/auth.js"></script>
+    <script>
+        // Close button functionality
+        document.getElementById('close-button').addEventListener('click', function () {
+            // Navigate back to the previous page
+            window.history.back();
+        });
+    </script>
+</body>
+
+</html>

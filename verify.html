@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تایید کد - برنا</title>
+    <meta name="description" content="وب‌سایت روانشناسی برنا - بهبود سلامت روان و کیفیت زندگی">
+    <link href="./css/output.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+</head>
+
+<body class="font-iran-sans bg-white min-h-screen">
+    <div class="flex flex-col md:flex-row min-h-screen relative">
+        <!-- Close Button -->
+        <button id="close-button" class="absolute top-4 left-4 z-10 group">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="group-hover:stroke-primary transition-colors" />
+                <path d="M6 6L18 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="group-hover:stroke-primary transition-colors" />
+            </svg>
+        </button>
+
+        <!-- Right side - Verification Form -->
+        <div class="w-full md:w-1/2 p-4 md:p-8 lg:p-12 flex flex-col justify-center">
+            <div class="max-w-md mx-auto w-full">
+                <!-- Logo -->
+                <div class="flex justify-center">
+                    <img src="./assets/images/logo.svg" alt="برنا">
+                </div>
+
+                <!-- Heading -->
+                <h1 class="text-2xl md:text-3xl font-semibold text-center mt-2">
+                    به
+                    <span class="text-[#34DB06]">برنا</span>
+                    خوش آمدید!
+                </h1>
+
+                <!-- Verification Form -->
+                <div class="mt-14 space-y-4">
+                    <h2 class="text-xl font-medium text-right mb-8">تایید شماره موبایل</h2>
+                    <div class="flex items-center justify-between">
+                        <p class="text-[#3C3D45]">
+                            کد ارسال شده به
+                            <span id="user-phone">۰۹۱۲۳۴۵۶۷۸۹</span>
+                            را وارد کنید.
+                        </p>
+                        <a href="login.html" class="text-sm text-[#28CB16] hover:underline">
+                            ویرایش شماره موبایل
+                        </a>
+                    </div>
+
+                    <!-- OTP Input -->
+                    <div class="flex flex-row-reverse justify-between gap-2 mb-6" dir="ltr">
+                        <input type="text" maxlength="1"
+                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            data-index="5">
+                        <input type="text" maxlength="1"
+                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            data-index="4">
+                        <input type="text" maxlength="1"
+                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            data-index="3">
+                        <input type="text" maxlength="1"
+                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            data-index="2">
+                        <input type="text" maxlength="1"
+                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            data-index="1">
+                        <input type="text" maxlength="1"
+                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            data-index="0" autofocus>
+                    </div>
+
+                    <!-- Timer & Resend -->
+                    <div class="flex items-center justify-start gap-1">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.50065 18.0103C4.80607 18.0103 0.990234 14.1945 0.990234 9.49992C0.990234 4.80534 4.80607 0.989502 9.50065 0.989502C14.1952 0.989502 18.0111 4.80534 18.0111 9.49992C18.0111 14.1945 14.1952 18.0103 9.50065 18.0103ZM9.50065 2.177C5.46315 2.177 2.17773 5.46242 2.17773 9.49992C2.17773 13.5374 5.46315 16.8228 9.50065 16.8228C13.5382 16.8228 16.8236 13.5374 16.8236 9.49992C16.8236 5.46242 13.5382 2.177 9.50065 2.177Z"
+                                fill="#85858B" />
+                            <path
+                                d="M12.4369 12.6111C12.334 12.6111 12.2311 12.5874 12.1361 12.5241L9.68193 11.0595C9.07234 10.6953 8.62109 9.89573 8.62109 9.19115V5.94531C8.62109 5.62073 8.89026 5.35156 9.21484 5.35156C9.53943 5.35156 9.80859 5.62073 9.80859 5.94531V9.19115C9.80859 9.47615 10.0461 9.89573 10.2915 10.0382L12.7457 11.5028C13.0307 11.6691 13.1178 12.0332 12.9515 12.3182C12.8328 12.5082 12.6348 12.6111 12.4369 12.6111Z"
+                                fill="#85858B" />
+                        </svg>
+                        <p class="text-[#6D6D74] text-sm">
+                            <span id="timer" class="text-[#28CB16]">۰۲:۰۰</span> تا دریافت مجدد کد
+                        </p>
+                        <button id="resend-code"
+                            class="text-[#28CB16] mr-2 hidden hover:text-primary transition-colors">
+                            دریافت مجدد کد
+                        </button>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="verify-submit"
+                        class="w-full bg-[#E7E7E8] text-[#CECED1] py-4 px-8 rounded-lg mb-6 disabled:opacity-70 hover:opacity-80 transition-all duration-300 ease-in-out">
+                        ورود
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left side - Image -->
+        <div class="hidden md:block md:w-1/2 bg-cover bg-center"
+            style="background-image: url('./assets/images/login-bg.png');">
+            <div class="h-full w-full bg-white bg-opacity-15 flex items-center justify-center"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script src="./js/auth.js"></script>
+    <script>
+        // Close button functionality
+        document.getElementById('close-button').addEventListener('click', function () {
+            // Navigate back to the previous page
+            window.history.back();
+        });
+    </script>
+</body>
+
+</html>
