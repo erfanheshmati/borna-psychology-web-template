@@ -1484,10 +1484,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.outline {
-  outline-style: solid;
-}
-
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1695,6 +1691,110 @@ html[dir="rtl"] body {
 
 /* Font weight utility classes */
 
+@media (min-width: 768px) {
+  .md\:container {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .md\:container {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .md\:container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .md\:container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .md\:container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .md\:container {
+      max-width: 1536px;
+    }
+  }
+
+  .md\:container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1340px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .md\:container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:container {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .lg\:container {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .lg\:container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .lg\:container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .lg\:container {
+      max-width: 1536px;
+    }
+  }
+
+  .lg\:container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1340px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
 .placeholder\:text-right::-moz-placeholder {
   text-align: right;
 }
@@ -1756,12 +1856,12 @@ html[dir="rtl"] body {
   outline-offset: 2px;
 }
 
-.focus\:outline-primary-dark:focus {
-  outline-color: #00FF44;
-}
-
 .focus\:outline-\[\#28CB16\]:focus {
   outline-color: #28CB16;
+}
+
+.focus\:outline-primary-dark:focus {
+  outline-color: #00FF44;
 }
 
 .disabled\:opacity-70:disabled {
