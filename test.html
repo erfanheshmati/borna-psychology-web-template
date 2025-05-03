@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تست شخصیت مایرز - بریگز (MBTI)</title>
+    <meta name="description" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- Tailwind CSS -->
+    <link href=" ./css/output.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href=" ./css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-side relative">
+    <!-- Background Ecllipse -->
+    <img src="./assets/images/ellipse.svg" alt="ecllipse" class="hidden md:block absolute top-0 right-0 -z-10">
+
+    <!-- Header/Navigation -->
+    <header class="bg-white md:bg-transparent h-[68px] md:h-auto">
+        <div class="container py-1 md:py-6">
+            <nav class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="md:hidden lg:block flex-shrink-0 z-10">
+                    <a href="index.html" class="block">
+                        <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا"
+                            class="w-[100px] md:w-[162px] h-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8 px-8 py-2 bg-gray-50 rounded-full border z-10">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        صفحه اصلی
+                    </a>
+                    <!-- Dropdown for آخرین تست‌ها -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            آخرین تست‌ها
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                1</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                2</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                3</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown for تست‌های برتر -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            تست‌های برتر
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 1
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 2
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 3
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors py-2">
+                        بوت کمپ
+                    </a>
+                    <a href="about-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        درباره ما
+                    </a>
+                    <a href="contact-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        ارتباط با ما
+                    </a>
+                </div>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8">
+                    <a href="./login.html">
+                        <span class="icon-login text-2xl hover:text-primary transition-colors"></span>
+                    </a>
+                    <button>
+                        <span class="icon-search text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                    <button>
+                        <span class="icon-profile text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Buttons -->
+                <div class="flex md:hidden items-center gap-4">
+                    <a href="./login.html" class="pt-1.5">
+                        <span class="icon-login text-xl text-neutral-700"></span>
+                    </a>
+                    <button>
+                        <img src="./assets/images/mobile-search.svg" alt="">
+                    </button>
+                    <button>
+                        <img src="./assets/images/mobile-profile.svg" alt="">
+                    </button>
+                    <button id="mobile-menu-button" class="text-secondary focus:outline-none">
+                        <img src="./assets/images/mobile-menu.svg" alt="">
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <a href="index.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    صفحه اصلی
+                </a>
+                <div class="border my-2"></div>
+                <!-- Dropdown for آخرین تست‌ها -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        آخرین تست‌ها
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <!-- Dropdown for تست‌های برتر -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        تست‌های برتر
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <a href="#" class="block py-2 text-secondary hover:text-primary text-center">
+                    بوت کمپ
+                </a>
+                <div class="border my-2"></div>
+                <a href="about-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    درباره ما
+                </a>
+                <div class="border my-2"></div>
+                <a href="contact-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    ارتباط با ما
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Content -->
+        <section class="container flex flex-col gap-6 py-8 md:py-12">
+            <!-- Test Title -->
+            <div class="flex items-center gap-2">
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M25.6963 14.0292H18.04C17.4421 14.0292 16.9463 13.5333 16.9463 12.9354C16.9463 12.3375 17.4421 11.8417 18.04 11.8417H25.6963C26.2942 11.8417 26.79 12.3375 26.79 12.9354C26.79 13.5333 26.3088 14.0292 25.6963 14.0292Z"
+                        fill="#23242E" />
+                    <path
+                        d="M10.3831 15.1375C10.106 15.1375 9.82891 15.0354 9.61016 14.8167L8.51641 13.7229C8.09349 13.3 8.09349 12.6 8.51641 12.1771C8.93932 11.7542 9.63932 11.7542 10.0622 12.1771L10.3831 12.4979L12.8914 9.98958C13.3143 9.56666 14.0143 9.56666 14.4372 9.98958C14.8602 10.4125 14.8602 11.1125 14.4372 11.5354L11.156 14.8167C10.9518 15.0208 10.6747 15.1375 10.3831 15.1375Z"
+                        fill="#23242E" />
+                    <path
+                        d="M25.6963 24.2375H18.04C17.4421 24.2375 16.9463 23.7417 16.9463 23.1437C16.9463 22.5458 17.4421 22.05 18.04 22.05H25.6963C26.2942 22.05 26.79 22.5458 26.79 23.1437C26.79 23.7417 26.3088 24.2375 25.6963 24.2375Z"
+                        fill="#23242E" />
+                    <path
+                        d="M10.3831 25.3458C10.106 25.3458 9.82891 25.2438 9.61016 25.025L8.51641 23.9313C8.09349 23.5083 8.09349 22.8083 8.51641 22.3854C8.93932 21.9625 9.63932 21.9625 10.0622 22.3854L10.3831 22.7063L12.8914 20.1979C13.3143 19.775 14.0143 19.775 14.4372 20.1979C14.8602 20.6208 14.8602 21.3208 14.4372 21.7438L11.156 25.025C10.9518 25.2292 10.6747 25.3458 10.3831 25.3458Z"
+                        fill="#23242E" />
+                    <path
+                        d="M21.8753 33.1771H13.1253C5.20658 33.1771 1.82324 29.7937 1.82324 21.875V13.125C1.82324 5.20624 5.20658 1.82291 13.1253 1.82291H21.8753C29.7941 1.82291 33.1774 5.20624 33.1774 13.125V21.875C33.1774 29.7937 29.7941 33.1771 21.8753 33.1771ZM13.1253 4.01041C6.40241 4.01041 4.01074 6.40207 4.01074 13.125V21.875C4.01074 28.5979 6.40241 30.9896 13.1253 30.9896H21.8753C28.5982 30.9896 30.9899 28.5979 30.9899 21.875V13.125C30.9899 6.40207 28.5982 4.01041 21.8753 4.01041H13.1253Z"
+                        fill="#23242E" />
+                </svg>
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 pt-1">تست شخصیت مایرز - بریگز
+                    (MBTI)
+                </h1>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="bg-[#FAFAFA] border border-gray-400 rounded-2xl px-10 pt-6 pb-10 mt-4 md:mt-6">
+                <div class="bg-white border h-8 rounded-full w-full">
+                    <div class="progress-bar bg-gradient-to-bl from-[#9dfb78] to-[#56d819] h-full rounded-r-full"
+                        style="width: 3%;"></div>
+                    <div dir="ltr"
+                        class="question-counter text-sm md:text-lg font-extrabold flex items-center justify-center mt-2">
+                        ۳ / ۱۰۰
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Test Content -->
+            <div class="flex flex-col gap-8 bg-[#FAFAFA] border border-gray-400 rounded-2xl p-6">
+                <div class="flex flex-col items-start">
+                    <div class="flex items-center justify-center gap-1">
+                        <span class="text-xl md:text-2xl question-number" dir="ltr">.3</span>
+                        <h2 class="text-xl md:text-2xl question-text">
+                            از خودم شناخت کامل دارم.
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div class="space-y-4 w-full md:max-w-[70%] mx-auto">
+                    <div class="test-option flex items-center gap-2 bg-[#EEEEEE] rounded-3xl p-3 cursor-pointer"
+                        data-value="5">
+                        <div
+                            class="option-circle bg-[#8bc94d] rounded-full mr-4 w-7 md:w-9 h-7 md:h-9 flex items-center justify-center">
+                            <div class="check-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12L10 17L19 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="text-sm md:text-lg">کاملا موافقم</span>
+                    </div>
+
+                    <div class="test-option flex items-center gap-2 bg-[#EEEEEE] rounded-3xl p-3 cursor-pointer"
+                        data-value="4">
+                        <div
+                            class="option-circle border border-black rounded-full mr-4 w-7 md:w-9 h-7 md:h-9 flex items-center justify-center">
+                        </div>
+                        <span class="text-sm md:text-lg">موافقم</span>
+                    </div>
+
+                    <div class="test-option flex items-center gap-2 bg-[#EEEEEE] rounded-3xl p-3 cursor-pointer"
+                        data-value="3">
+                        <div
+                            class="option-circle border border-black rounded-full mr-4 w-7 md:w-9 h-7 md:h-9 flex items-center justify-center">
+                        </div>
+                        <span class="text-sm md:text-lg">نظری ندارم</span>
+                    </div>
+
+                    <div class="test-option flex items-center gap-2 bg-[#EEEEEE] rounded-3xl p-3 cursor-pointer"
+                        data-value="2">
+                        <div
+                            class="option-circle border border-black rounded-full mr-4 w-7 md:w-9 h-7 md:h-9 flex items-center justify-center">
+                        </div>
+                        <span class="text-sm md:text-lg">مخالفم</span>
+                    </div>
+
+                    <div class="test-option flex items-center gap-2 bg-[#EEEEEE] rounded-3xl p-3 cursor-pointer"
+                        data-value="1">
+                        <div
+                            class="option-circle border border-black rounded-full mr-4 w-7 md:w-9 h-7 md:h-9 flex items-center justify-center">
+                        </div>
+                        <span class="text-sm md:text-lg">کاملا مخالفم</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between mt-10">
+                    <button
+                        class="prev-button bg-red-200 hover:bg-red-300 transition-colors px-8 py-2 rounded-lg text-xl">
+                        قبلی
+                    </button>
+                    <button
+                        class="next-button bg-green-200 hover:bg-green-300 transition-colors px-8 py-2 rounded-lg text-xl">
+                        بعدی
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-footer pt-20 md:pt-28 pb-4 md:pb-8">
+        <div class="container">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="flex flex-col gap-4 col-span-2 lg:col-span-1 order-1">
+                    <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا" class="w-[162px] h-auto">
+                    <p class="text-text-dark text-opacity-90 text-sm leading-relaxed text-justify">
+                        روانشناسی برنا با مفهوم ارتقاء ذهنی و روانی مراجعه‌کنندگان، به مراقبت و توسعه افراد و خانواده‌ها
+                        اختصاص دارد. با توجه به اهمیت بهبود روانی در زندگی روزمره، در راستای بهبود کیفیت زندگی افراد کمک
+                        می‌کنند.
+                    </p>
+                    <!-- Social Media -->
+                    <div class="hidden lg:flex items-center justify-center gap-6">
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Recommended Tests -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-3 lg:order-2">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">تست‌های پیشنهادی</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست هوش
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-4 lg:order-3">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">دسترسی سریع</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="index.html"
+                                class="text-secondary text-sm hover:text-primary transition-colors">صفحه
+                                اصلی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درخواست مشاوره
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about-us.html" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درباره‌ی ما
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تماس با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="flex flex-col justify-center col-span-2 lg:col-span-1 order-2 lg:order-4">
+                    <p class="text-text-dark text-opacity-80 text-sm mb-4">با ثبت ایمیل از آخرین تخفیف با خبر شوید.</p>
+                    <form id="newsletter-form" class="flex">
+                        <div class="relative flex-grow">
+                            <input type="email" placeholder="ایمیل" required
+                                class="w-full pr-2 py-2 bg-transparent border-b border-gray-400 border-opacity-25 focus:border-primary focus:outline-none text-secondary">
+                            <button type="submit" class="absolute left-0 top-1/2 -translate-y-1/2">
+                                <svg width="25" height="18" viewBox="0 0 25 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="group">
+                                    <path
+                                        d="M22 0.999878H3C1.89543 0.999878 1 1.89531 1 2.99988V14.9999C1 16.1044 1.89543 16.9999 3 16.9999H22C23.1046 16.9999 24 16.1044 24 14.9999V2.99988C24 1.89531 23.1046 0.999878 22 0.999878Z"
+                                        stroke="#787878" stroke-width="1.00138" stroke-linecap="round"
+                                        stroke-linejoin="round" class="group-hover:stroke-primary transition-colors" />
+                                    <path d="M23.4109 1.58203L12.4999 10.5L1.58887 1.58203" stroke="#787878"
+                                        stroke-width="1.00138" stroke-linecap="round" stroke-linejoin="round"
+                                        class="group-hover:stroke-primary transition-colors" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="flex lg:hidden items-center gap-6 mt-6">
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                </a>
+            </div>
+
+            <!-- Separator -->
+            <div class="border my-4 md:my-8"></div>
+
+            <!-- Copyright -->
+            <div class="text-text-dark text-center" dir="ltr">© 2023 All rights reserved</div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script src="./js/test.js"></script>
+</body>
+
+</html>
