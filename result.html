@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتیجه تست شخصیت شناسی MBTI</title>
+    <meta name="description" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-side relative">
+    <!-- Background Ecllipse -->
+    <img src="./assets/images/ellipse.svg" alt="ecllipse" class="hidden lg:block absolute top-0 right-0 -z-10">
+
+    <!-- Header/Navigation -->
+    <header class="bg-white md:bg-transparent h-[68px] md:h-auto">
+        <div class="container py-1 md:py-6">
+            <nav class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="md:hidden lg:block flex-shrink-0 z-10">
+                    <a href="index.html" class="block">
+                        <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا"
+                            class="w-[100px] md:w-[162px] h-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8 px-8 py-2 bg-gray-50 rounded-full border z-10">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        صفحه اصلی
+                    </a>
+                    <!-- Dropdown for آخرین تست‌ها -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            آخرین تست‌ها
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                1</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                2</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                3</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown for تست‌های برتر -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            تست‌های برتر
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 1
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 2
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 3
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors py-2">
+                        بوت کمپ
+                    </a>
+                    <a href="about-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        درباره ما
+                    </a>
+                    <a href="contact-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        ارتباط با ما
+                    </a>
+                </div>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8">
+                    <a href="./login.html">
+                        <span class="icon-login text-2xl hover:text-primary transition-colors"></span>
+                    </a>
+                    <button>
+                        <span class="icon-search text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                    <button>
+                        <span class="icon-profile text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Buttons -->
+                <div class="flex md:hidden items-center gap-4">
+                    <a href="./login.html" class="pt-1.5">
+                        <span class="icon-login text-xl text-neutral-700"></span>
+                    </a>
+                    <button>
+                        <img src="./assets/images/mobile-search.svg" alt="">
+                    </button>
+                    <button>
+                        <img src="./assets/images/mobile-profile.svg" alt="">
+                    </button>
+                    <button id="mobile-menu-button" class="text-secondary focus:outline-none">
+                        <img src="./assets/images/mobile-menu.svg" alt="">
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <a href="index.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    صفحه اصلی
+                </a>
+                <div class="border my-2"></div>
+                <!-- Dropdown for آخرین تست‌ها -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        آخرین تست‌ها
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <!-- Dropdown for تست‌های برتر -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        تست‌های برتر
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <a href="#" class="block py-2 text-secondary hover:text-primary text-center">
+                    بوت کمپ
+                </a>
+                <div class="border my-2"></div>
+                <a href="about-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    درباره ما
+                </a>
+                <div class="border my-2"></div>
+                <a href="contact-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    ارتباط با ما
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container flex flex-col gap-6 md:gap-10 py-8 md:py-12">
+        <!-- Test Title -->
+        <div class="text-center">
+            <h1 class="text-2xl md:text-3xl font-bold">تست شخصیت شناسی MBTI</h1>
+        </div>
+
+        <!-- User Info Section -->
+        <div class="bg-white rounded-[35px] p-4 w-full max-w-2xl mx-auto">
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div class="flex flex-col items-center">
+                    <p class="text-gray-500 mb-2 text-sm md:text-base">تاریخ انجام</p>
+                    <p class="text-black font-semibold text-base md:text-lg">22 دی 1403</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="text-gray-500 mb-2 text-sm md:text-base">جنسیت</p>
+                    <p class="text-black font-semibold text-base md:text-lg">مرد</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="text-gray-500 mb-2 text-sm md:text-base">سن</p>
+                    <p class="text-black font-semibold text-base md:text-lg">27 ساله</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Results Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/blue-wave.svg" class="w-full min-h-24 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    خلاصه نتایج شما
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex justify-between mt-14 mb-10 sm:mt-16 sm:mb-10 md:mt-20 md:mb-14 lg:mt-28 lg:mb-16">
+                <!-- Description -->
+                <div class="w-full md:w-2/3 flex flex-col">
+                    <!-- Personality Type -->
+                    <div class="border-r border-gray-300 mr-1 pr-4 w-fit">
+                        <p class="text-xl md:text-2xl text-gray-600 mb-2 md:mb-6">برچسب شخصیتی شما</p>
+                        <h3 class="text-2xl md:text-[43px] font-bold text-[#5996B1]">ESTJ</h3>
+                        <div class="flex items-center">
+                            <hr class="border-gray-300 w-full my-4">
+                            <div class="w-2 h-2 rounded-full bg-gray-400"></div>
+                        </div>
+                    </div>
+                    <!-- Personality Traits -->
+                    <div
+                        class="relative space-y-6 pt-4 before:absolute before:right-1 before:top-0 before:bottom-0 before:w-px before:bg-gray-300">
+                        <div class="flex items-center gap-3">
+                            <div class="min-w-2.5 min-h-2.5 rounded-full bg-[#5996B1] z-10"></div>
+                            <p class="text-sm md:text-lg text-[#5996B1] font-semibold">عنوان</p>
+                            <p class="text-sm md:text-lg text-gray-600">اجرا کننده (The Executive)</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="min-w-2.5 min-h-2.5 rounded-full bg-[#5996B1] z-10"></div>
+                            <p class="text-sm md:text-lg text-[#5996B1] font-semibold">توصیف شما</p>
+                            <p class="text-sm md:text-lg text-gray-600">برون گرا، حسی، منطقی، قضاوتی</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="min-w-2.5 min-h-2.5 rounded-full bg-[#5996B1] z-10"></div>
+                            <p class="text-sm md:text-lg text-[#5996B1] font-semibold">دسته‌بندی شما</p>
+                            <p class="text-sm md:text-lg text-gray-600">محافظین، امنیت طلب ها، سنت گرایان</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="min-w-2.5 min-h-2.5 rounded-full bg-[#5996B1] z-10"></div>
+                            <p class="text-sm md:text-lg text-[#5996B1] font-semibold">شعار</p>
+                            <p class="text-sm md:text-lg text-gray-600">اهل تجارت و کسب و کار</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="min-w-2.5 min-h-2.5 rounded-full bg-[#5996B1] z-10"></div>
+                            <p class="text-sm md:text-lg text-[#5996B1] font-semibold">تیپ فرعی</p>
+                            <p class="text-sm md:text-lg text-gray-600">ESTJ-A</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image -->
+                <div class="w-1/3 hidden md:flex items-center">
+                    <img src="./assets/images/young-man.svg" alt="تصویر شخصیت ESTJ" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+
+        <!-- Personality Traits Chart Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/purple-wave.svg" class="w-full min-h-24 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    نمودار ویژگی‌های شخصیتی شما
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex justify-between mt-14 mb-10 sm:mt-20 sm:mb-10 md:mt-20 md:mb-14 lg:mt-28 lg:mb-16">
+                <!-- Personality Traits Chart -->
+                <div class="w-full md:w-7/12 flex flex-col gap-4">
+                    <!-- Extrovert vs. Introvert -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-[#00AEFF] text-sm font-bold">
+                                43%
+                            </span>
+                            <span class="text-gray-400 text-sm font-bold">درونگرا</span>
+                        </div>
+                        <div class="h-4 bg-white border rounded-lg relative">
+                            <div class="absolute inset-y-0 left-0 w-[46.2%] bg-[#98DEFF] rounded-lg"></div>
+                            <div class="absolute w-4 h-4 bg-[#98DEFF] border-2 border-white rounded-full"
+                                style="left: 43%; top: 50%; transform: translateY(-50%)"></div>
+                        </div>
+                        <div class="flex justify-between text-gray-500 font-bold">
+                            <span>برونگرا</span>
+                            <span>درونگرا</span>
+                        </div>
+                    </div>
+                    <!-- Sensing vs. Intuition -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-[#00FF6A] text-sm font-bold">
+                                43%
+                            </span>
+                            <span class="text-gray-400 text-sm font-bold">حسی</span>
+                        </div>
+                        <div class="h-4 bg-white border rounded-lg relative">
+                            <div class="absolute inset-y-0 left-0 w-[46.2%] bg-[#00FF6A] rounded-lg"></div>
+                            <div class="absolute w-4 h-4 bg-[#00FF6A] border-2 border-white rounded-full"
+                                style="left: 43%; top: 50%; transform: translateY(-50%)"></div>
+                        </div>
+                        <div class="flex justify-between text-gray-500 font-bold">
+                            <span>شهودی</span>
+                            <span>حسی</span>
+                        </div>
+                    </div>
+                    <!-- Thinking vs. Feeling -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-[#FFBF00] text-sm font-bold">
+                                43%
+                            </span>
+                            <span class="text-gray-400 text-sm font-bold">منطقی</span>
+                        </div>
+                        <div class="h-4 bg-white border rounded-lg relative">
+                            <div class="absolute inset-y-0 left-0 w-[46.2%] bg-[#FFBF00] rounded-lg"></div>
+                            <div class="absolute w-4 h-4 bg-[#FFBF00] border-2 border-white rounded-full"
+                                style="left: 43%; top: 50%; transform: translateY(-50%)"></div>
+                        </div>
+                        <div class="flex justify-between text-gray-500 font-bold">
+                            <span>احساسی</span>
+                            <span>منطقی</span>
+                        </div>
+                    </div>
+                    <!-- Judging vs. Perceiving -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-[#FF00E1] text-sm font-bold">
+                                43%
+                            </span>
+                            <span class="text-gray-400 text-sm font-bold">قضاوتی</span>
+                        </div>
+                        <div class="h-4 bg-white border rounded-lg relative">
+                            <div class="absolute inset-y-0 left-0 w-[46.2%] bg-[#FF00E1] rounded-lg"></div>
+                            <div class="absolute w-4 h-4 bg-[#FF00E1] border-2 border-white rounded-full"
+                                style="left: 43%; top: 50%; transform: translateY(-50%)"></div>
+                        </div>
+                        <div class="flex justify-between text-gray-500 font-bold">
+                            <span>ادراکی</span>
+                            <span>قضاوتی</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image -->
+                <div class="w-4/12 hidden md:flex items-center">
+                    <img src="./assets/images/teacher.svg" alt="" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+
+        <!-- General Introduction Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/green-wave.svg" class="w-full min-h-24 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    معرفی کلی شما
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex flex-col gap-10 mt-14 mb-10 sm:mt-20 sm:mb-10 md:mt-28 md:mb-14 lg:mt-32 lg:mb-16">
+                <!-- General Introduction Text -->
+                <p class="text-sm md:text-base text-gray-600 leading-8 md:leading-10 text-justify">
+                    شما فردی مسئولیت پذیر، عملگرا و تصمیم گیرنده هستید. با جدیت و قاطعیت تمایل دارید تا مسئولیت
+                    کارها را به عهده بگیرید. معیارها و برنامه های روشنی دارید و برای قوانین ارزش زیادی قائل هستید.
+                    سخت کوشی و اعتماد به نفس در کنار توان اجرایی و سازماندهی به شما کمک می کند تا بتوانید گروهی از
+                    افراد را به خوبی هدایت و رهبری کنید.
+                </p>
+                <div class="flex items-center justify-center p-6 rounded-3xl bg-[rgba(223,255,213,0.4)]">
+                    <p class="text-base md:text-lg text-black font-semibold text-justify">
+                        آگاهی بدون عمل ارزشی ندارد. گاهی درست تصمیم می گیرید و گاهی تصمیم درستی می گیرید.
+                        <span>«دکتر فیل»</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personality Traits Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/yellow-wave.svg" class="w-full min-h-24 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    صفات شخصیتی و ویژگی شما
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex flex-col gap-12 mt-14 mb-10 sm:mt-20 sm:mb-10 md:mt-28 md:mb-14 lg:mt-32 lg:mb-16">
+                <!-- Personality Traits Description -->
+                <div>
+                    <ol class="list-disc space-y-4">
+                        <li class="text-sm md:text-base text-gray-600 text-justify">
+                            با توجه به نمراتی که کسب کرده اید، باید بگوییم که شما در اجرای نقشه ها و برنامه ها، قدرتمند
+                            بوده و قادرید که امور مختلف را به خوبی سازماندهی کنید. از اینکه مسئولیتی داشته باشید و همه
+                            چیز را در کنترل خود بگیرید، لذت می برید.
+                        </li>
+                        <li class="text-sm md:text-base text-gray-600 text-justify">
+                            شما فردی عمل گرا هستید، به سرعت اقدام به پیاده سازی تصمیمات کرده و افراد و پروژه ها را برای
+                            انجام کارها سازماندهی می کنید. به شدت تلاش می کنید که برنامه هایتان را به موقع به اتمام
+                            برسانید، و عملکرد مطلوبی در آنها داشته باشید.
+                        </li>
+                        <li class="text-sm md:text-base text-gray-600 text-justify">
+                            از قدرت تصمیم گیری خوبی برخوردارید و شیوه صحیح انجام کارها را می دانید. اغلب برای گرفتن
+                            تصمیم هایتان، تکیه بسیاری بر تجربیات گذشته تان دارید. فردی مسئول و هشیار بوده و نسبت به
+                            تعهدات خود، پایبندید.
+                        </li>
+                        <li class="text-sm md:text-base text-gray-600 text-justify">
+                             شما از نظم و انضباط فراوانی برخوردارید. به ساختارها و جزئیات، اهمیت زیادی می دهید و آنها را
+                            به خوبی، به خاطر می سپارید. برای انجام هر کاری، مجموعه ای روشن و واضح از استانداردهای منطقی
+                            را دارید که به صورت منظم، آنها را دنبال کرده و از سایرین نیز همین توقع را دارید.
+                        </li>
+                        <li class="text-sm md:text-base text-gray-600 text-justify">
+                            شما فردی منطقی و تحلیلگر هستید و از قدرت استدلال خوبی برخوردارید؛ همچنین، بسیار واقع بین و
+                            عملگرا می باشید. به همین دلیل به امور و مسائل حقیقی و عینی، بیش از نظریه ها بها می دهید و
+                            پدیده ها و موضوعات از آن جهت برای شما ارزشمندند که کاربرد عملی داشته باشند.
+                        </li>
+                        <li class="text-sm md:text-base text-gray-600 text-justify">
+                            یکی از ویژگی های بسیار مثبت شما این است که در لحظه حال زندگی می کنید. هر چند در روابط و
+                            زندگی خود، فردی ثابت قدم هستید، با این حال توجه زیادی به بخش احساسی و اجتماعی زندگی خود
+                            دارید.
+                        </li>
+                        <li class="text-sm md:text-base text-gray-600 text-justify">
+                            برای سنت ها، ارزش زیادی قائل هستید و در انجام فعالیت های مختلف، به قوانین احترام می گذارید.
+                            شما در عین داشتن روابط دوستانه با دیگران، فردی صریح بوده و به راحتی، اشخاص را قضاوت می کنید.
+                            اطرافیانتان معتقدند که شناخت شما، کار آسانی است؛ زیرا دقیقا همانگونه که هستید، رفتار می
+                            کنید. به طور کلی، می توان گفت که شما در انجام عملی کارها، عالی هستید.
+                        </li>
+                    </ol>
+                </div>
+                <!-- Personality Traits Tags -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-4 w-full">
+                        <h3 class="text-lg md:text-xl font-bold text-black min-w-max">ویژگی‌های شما به صورت کلیدی</h3>
+                        <hr class="border-gray-300 w-full">
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            متمرکز
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            برونگرا
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            سازمان‌یافته
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            نتیجه‌محور
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            بیانگر
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            صریح
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            قابل اعتماد
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            پرانرژی
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            تحلیلی
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            ساختارمند
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            محکم
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            تعیین‌کننده
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            استدلال‌گر
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            هدایت‌گر
+                        </div>
+                        <div class="bg-[#FFF6DE] px-4 py-2 rounded-xl text-[#A3854E] text-sm md:text-base">
+                            شروع‌کننده
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personality Weaknesses Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/blue-wave.svg" class="w-full min-h-24 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    نقاط ضعف شخصیتی شما
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex flex-col gap-10 mt-14 mb-10 sm:mt-20 sm:mb-10 md:mt-28 md:mb-14 lg:mt-32 lg:mb-16">
+                <!-- Weaknesses List -->
+                <div class="space-y-6">
+                    <div class="flex items-start gap-2">
+                        <div class="text-red-500 flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base text-justify">
+                            از آنجا که شما معیارهای اخلاقی محکمی برای خود و
+                            دیگران
+                            قائلید، وقتی می
+                            خواهید
+                            معیارهای خود را به آنها تحمیل کنید، دیکتاتور به نظر می رسید.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <div class="text-red-500 flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base text-justify">
+                            در هنگام تحلیل مسائل و اتخاذ یک تصمیم، به این توجه
+                            ندارید که
+                            این تصمیمات،
+                            چه
+                            تأثیراتی روی دیگران بر جای می گذارد.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <div class="text-red-500 flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base text-justify">
+                            ممکن است گاهی سرد و بی توجه به نظر برسید و به همین
+                            دلیل، لازم
+                            است که به
+                            احساسات دیگران، بهای بیشتری بدهید.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <div class="text-red-500 flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base text-justify">
+                            چون شما به صورت ذاتی، فردی انتقادگر هستید؛ معمولاً
+                            به اقدامات
+                            مثبت
+                            اطرافیان
+                            خود، توجه کافی ندارید.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <div class="text-red-500 flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base text-justify">
+                            گاهی به قدری در برنامه ها و افکار خود فرو می روید
+                            که به حرف
+                            های دیگران گوش
+                            نمی
+                            دهید؛ همین عامل، ممکن است سبب شود تا نکات مهمی را که در حرف های آنها وجود دارد، از دست
+                            بدهید.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <div class="text-red-500 flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base text-justify">
+                            معمولاً پیش می آید که بدون داشتن شواهد لازم و
+                            کافی، تصمیم
+                            گیری کنید.</p>
+                    </div>
+                </div>
+                <!-- Key to Success -->
+                <div class="flex items-center justify-center bg-[#D4FEFF] p-6 rounded-2xl">
+                    <p class="text-base md:text-lg text-black font-semibold">
+                        رمز موفقیت شما این است که آرام بگیرید؛ به تأثیر تصمیماتتان روی دیگران توجه داشته و انعطاف پذیر
+                        باشید.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marriage Compatibility Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/purple-wave.svg" class="w-full min-h-32 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    تطابق شما با سایر تیپ‌ها برای ازدواج
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex flex-col gap-10 mt-20 mb-10 sm:mt-24 sm:mb-10 md:mt-28 md:mb-14 lg:mt-32 lg:mb-16">
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-16">
+                    <!-- The most ideal people -->
+                    <div class="flex flex-col gap-4">
+                        <div class="grid grid-cols-5 gap-5">
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center py-4 bg-[#D4FEFF] rounded-2xl">
+                            <p class="text-[#676767] text-base md:text-lg">ایده‌آل ترین افراد</p>
+                        </div>
+                    </div>
+                    <!-- Most matches -->
+                    <div class="flex flex-col gap-4">
+                        <div class="grid grid-cols-3 gap-5">
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#E0FFE1] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#E0FFE1] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#E0FFE1] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#E0FFE1] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#E0FFE1] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#E0FFE1] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center py-4 bg-[#E0FFE1] rounded-2xl">
+                            <p class="text-[#676767] text-base md:text-lg">بیش‌ترین تطابق</p>
+                        </div>
+                    </div>
+                    <!-- Average match -->
+                    <div class="flex flex-col gap-4">
+                        <div class="grid grid-cols-4 gap-5">
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#FEE0FF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#FEE0FF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#FEE0FF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#FEE0FF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#FEE0FF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#FEE0FF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#FEE0FF] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#FEE0FF] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center py-4 bg-[#FEE0FF] rounded-2xl">
+                            <p class="text-[#676767] text-base md:text-lg">تطابق متوسط</p>
+                        </div>
+                    </div>
+                    <!-- Least matching -->
+                    <div class="flex flex-col gap-4">
+                        <div class="grid grid-cols-4 gap-5">
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#FFF5D4] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#FFF5D4] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#FFF5D4] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#FFF5D4] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#FFF5D4] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#FFF5D4] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
+                                    <div class="absolute bottom-0 w-full bg-[#FFF5D4] h-[80%]"></div>
+                                </div>
+                                <div class="bg-[#FFF5D4] text-black text-center text-sm py-1 px-2">ENTJ</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center py-4 bg-[#FFF5D4] rounded-2xl">
+                            <p class="text-[#676767] text-base md:text-lg">کمترین تطابق</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personality in the Workplace Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/yellow-wave.svg" class="w-full min-h-24 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    شخصیت شما در محل کار
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex flex-col gap-14 mt-14 mb-10 sm:mt-20 sm:mb-10 md:mt-28 md:mb-14 lg:mt-32 lg:mb-16">
+                <!-- Personality Items -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                        <div class="min-h-full min-w-1.5 bg-yellow-200 rounded-lg"></div>
+                        <p class="text-sm md:text-base text-black">
+                            از هوشی برخوردارید که می‌توانید افراد دیگر را به خوبی قانع سازید که نظرات و دیدگاه‌های
+                            شما
+                            را بپذیرند.
+                        </p>
+                    </div>
+                    <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                        <div class="min-h-full min-w-1.5 bg-yellow-200 rounded-lg"></div>
+                        <p class="text-sm md:text-base text-black">
+                            محدود کردن توجه‌تان به یک موضوع برای شما دشوار است، چرا که علاقه‌مند به دنبال کردن چندین
+                            موضوع هستید.
+                        </p>
+                    </div>
+                    <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                        <div class="min-h-full min-w-1.5 bg-yellow-200 rounded-lg"></div>
+                        <p class="text-sm md:text-base text-black">
+                            علاقه دارید که به طور همزمان روی چندین پروژه کار کنید.
+                        </p>
+                    </div>
+                    <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                        <div class="min-h-full min-w-1.5 bg-yellow-200 rounded-lg"></div>
+                        <p class="text-sm md:text-base text-black">
+                            تمایلی به اتخاذ رویکردهای متداول و رایج در عمل ندارید و بیشتر به دنبال استفاده از
+                            شیوه‌های
+                            نوین و خلاق می‌گردید.
+                        </p>
+                    </div>
+                    <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                        <div class="min-h-full min-w-1.5 bg-yellow-200 rounded-lg"></div>
+                        <p class="text-sm md:text-base text-black">
+                            تمایل دارید که در ارتباط با افراد متفاوت قرار بگیرید.
+                        </p>
+                    </div>
+                    <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                        <div class="min-h-full min-w-1.5 bg-yellow-200 rounded-lg"></div>
+                        <p class="text-sm md:text-base text-black">
+                            شما نوآور هستید و برای حل چالش‌های خود به خرد و خلاقیت‌تان استناد می‌کنید.
+                        </p>
+                    </div>
+                    <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                        <div class="min-h-full min-w-1.5 bg-yellow-200 rounded-lg"></div>
+                        <p class="text-sm md:text-base text-black">
+                            اگر فعالیتی برای شما جذابیت نداشته باشد، اشتیاق چندانی به انجام دادن آن از خود نشان
+                            نمی‌دهید.
+                        </p>
+                    </div>
+                    <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                        <div class="min-h-full min-w-1.5 bg-yellow-200 rounded-lg"></div>
+                        <p class="text-sm md:text-base text-black">
+                            شما فردی موثر و اثرگذار هستید و به دلیل سطح بالای اعتماد به نفس، محبوبیت و احترام دیگران
+                            را
+                            به دست می‌آورید.
+                        </p>
+                    </div>
+                </div>
+                <!-- Strengths and Weaknesses -->
+                <div class="flex flex-col sm:flex-row gap-10">
+                    <!-- Strengths -->
+                    <div class="w-full sm:w-1/2 flex flex-col gap-4">
+                        <h3 class="text-lg md:text-xl font-semibold text-[#6E6E6E]">
+                            نقاط
+                            <span class="bg-[#2AFF00] text-white px-2 py-1 rounded-xl">مثبت کاری</span>
+                        </h3>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3 mt-2">
+                            <div class="min-h-full min-w-1.5 bg-green-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">توانایی سازماندهی افراد و منابع</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-green-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">تمرکز بر کارایی و بهره‌وری</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-green-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">قدرت تصمیم‌گیری قاطع</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-green-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">پایبندی به قوانین و ساختارها</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-green-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">مدیریت مؤثر پروژه‌ها</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-green-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">قابلیت اعتماد و پاسخگویی</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-green-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">توجه به جزئیات و دقت</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-green-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">تلاش مداوم برای بهبود</p>
+                        </div>
+                    </div>
+                    <!-- Weaknesses -->
+                    <div class="w-full sm:w-1/2 flex flex-col gap-4">
+                        <h3 class="text-lg md:text-xl font-semibold text-[#6E6E6E]">
+                            نقاط
+                            <span class="bg-[#FF5151] text-white px-2 py-1 rounded-xl">منفی کاری</span>
+                        </h3>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3 mt-2">
+                            <div class="min-h-full min-w-1.5 bg-red-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">عدم تاب‌آوری در برابر اشخاص غیرانعطاف‌پذیر
+                            </p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-red-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">بی‌صبری نسبت به افراد ناکارآمد</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-red-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">رک‌گویی بیش از حد که گاهی آزاردهنده است</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-red-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">مقاومت در برابر تغییر و نوآوری</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-red-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">تأکید بیش از حد بر قوانین و سنت‌ها</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-red-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">بی‌توجهی به احساسات دیگران</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-red-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">انتقادگر و سختگیر در محیط کار</p>
+                        </div>
+                        <div class="flex gap-2 bg-gray-100 bg-opacity-30 border border-gray-200 rounded-2xl p-3">
+                            <div class="min-h-full min-w-1.5 bg-red-200 rounded-lg"></div>
+                            <p class="text-sm md:text-base text-black">فشار آوردن بیش از حد بر خود و دیگران</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compatible Careers Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/green-wave.svg" class="w-full min-h-32 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    مشاغلی که با شخصیت شما همخوانی بیشتری دارند
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex flex-col gap-10 mt-16 mb-10 sm:mt-20 sm:mb-10 md:mt-28 md:mb-14 lg:mt-32 lg:mb-16">
+                <!-- Categories of Jobs -->
+                <div class="space-y-12">
+                    <!-- Business and Management -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <h3 class="text-lg md:text-xl font-bold text-black mb-3 min-w-max">تجارت و مدیریت</h3>
+                            <hr class="border-gray-300 w-full pb-1">
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                کارفرما
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                اجرایی</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                پروژه</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                مالی
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                بازاریابی</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                تحلیلگر
+                                مالی</div>
+                        </div>
+                    </div>
+                    <!-- Culture and Arts -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <h3 class="text-lg md:text-xl font-bold text-black mb-3 min-w-max">فرهنگی و هنری</h3>
+                            <hr class="border-gray-300 w-full pb-1">
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                موزه
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                گالری هنری</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                رویدادهای فرهنگی</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">منتقد
+                                هنری</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">تهیه
+                                کننده</div>
+                        </div>
+                    </div>
+                    <!-- Planning and Consulting -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <h3 class="text-lg md:text-xl font-bold text-black mb-3 min-w-max">برنامه‌ریزی و مشاوره
+                            </h3>
+                            <hr class="border-gray-300 w-full pb-1">
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مشاور
+                                کسب
+                                و کار</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مشاور
+                                استراتژی</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                برنامه‌ریز مالی</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                برنامه‌ریزی</div>
+                        </div>
+                    </div>
+                    <!-- Politics -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <h3 class="text-lg md:text-xl font-bold text-black mb-3 min-w-max">سیاست</h3>
+                            <hr class="border-gray-300 w-full pb-1">
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                دیپلمات
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                نماینده
+                                مجلس</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                سیاستگذار
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">مدیر
+                                دولتی</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                شهردار
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Professional Services -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <h3 class="text-lg md:text-xl font-bold text-black mb-3 min-w-max">خدمات حرفه‌ای</h3>
+                            <hr class="border-gray-300 w-full pb-1">
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">وکیل
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">قاضی
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                کارشناس
+                                حقوقی</div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">
+                                حسابدار
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">بازرس
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">افسر
+                                پلیس
+                            </div>
+                            <div class="bg-[#E0FFE1] px-4 py-2 rounded-xl text-[#499A73] text-sm md:text-base">نظامی
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggestions for Improvement Section -->
+        <div
+            class="bg-white rounded-[30px] p-6 md:py-8 md:px-14 shadow-lg mt-4 md:mt-10 w-full max-w-5xl mx-auto relative">
+            <!-- Header with light background and wave -->
+            <div class="absolute top-0 left-0 right-0">
+                <img src="./assets/images/waves/blue-wave.svg" class="w-full min-h-24 object-cover rounded-t-[30px]">
+            </div>
+            <!-- Title -->
+            <div class="z-10 relative">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600 text-center md:mt-3 lg:mt-4">
+                    پیشنهاداتی برای بهبود شخصیت‌تان‌
+                </h2>
+            </div>
+            <!-- Content -->
+            <div class="flex flex-col gap-10 mt-16 mb-10 sm:mt-20 sm:mb-10 md:mt-28 md:mb-14 lg:mt-32 lg:mb-16">
+                <!-- Improvement Suggestions -->
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00F9FF] flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M7 12L10.5 15.5L17 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base">
+                            سعی کنید به احساسات دیگران توجه بیشتری نشان دهید. این کار روابط شما را
+                            بهبود
+                            می‌بخشد.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00F9FF] flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M7 12L10.5 15.5L17 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base">
+                            گاهی اوقات کمی انعطاف‌پذیری بیشتری نشان دهید. همه‌چیز نباید همیشه طبق
+                            قوانین
+                            سخت پیش برود.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00F9FF] flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M7 12L10.5 15.5L17 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base">
+                            مهارت‌های گوش دادن فعال را در خود تقویت کنید. گاهی اوقات تنها نیاز به
+                            شنیدن
+                            است، نه ارائه راه‌حل.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00F9FF] flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M7 12L10.5 15.5L17 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base">
+                            به خودتان و دیگران اجازه اشتباه دهید. کمال‌گرایی افراطی می‌تواند مانع رشد
+                            و
+                            نوآوری شود.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00F9FF] flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M7 12L10.5 15.5L17 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base">
+                            در مورد موضوعات مختلف، از دیدگاه‌های متفاوت استقبال کنید. این دید شما را
+                            وسیع‌تر می‌کند.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00F9FF] flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M7 12L10.5 15.5L17 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base">
+                            برای خودتان زمان استراحت و تفریح در نظر بگیرید. فعالیت‌های بدون
+                            برنامه‌ریزی
+                            می‌تواند خلاقیت شما را افزایش دهد.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00F9FF] flex-shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M7 12L10.5 15.5L17 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p class="text-black text-sm md:text-base">
+                            ایده‌های جدید را با ذهنی باز بررسی کنید. نوآوری می‌تواند روش‌های کارآمدتری
+                            برای رسیدن به اهداف شما فراهم کند.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-footer pt-20 md:pt-28 pb-4 md:pb-8">
+        <div class="container">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="flex flex-col gap-4 col-span-2 lg:col-span-1 order-1">
+                    <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا" class="w-[162px] h-auto">
+                    <p class="text-text-dark text-opacity-90 text-sm leading-relaxed text-justify">
+                        روانشناسی برنا با مفهوم ارتقاء ذهنی و روانی مراجعه‌کنندگان، به مراقبت و توسعه افراد و خانواده‌ها
+                        اختصاص دارد. با توجه به اهمیت بهبود روانی در زندگی روزمره، در راستای بهبود کیفیت زندگی افراد کمک
+                        می‌کنند.
+                    </p>
+                    <!-- Social Media -->
+                    <div class="hidden lg:flex items-center justify-center gap-6">
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Recommended Tests -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-3 lg:order-2">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">تست‌های پیشنهادی</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست هوش
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-4 lg:order-3">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">دسترسی سریع</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="index.html"
+                                class="text-secondary text-sm hover:text-primary transition-colors">صفحه
+                                اصلی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درخواست مشاوره
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about-us.html" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درباره‌ی ما
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تماس با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="flex flex-col justify-center col-span-2 lg:col-span-1 order-2 lg:order-4">
+                    <p class="text-text-dark text-opacity-80 text-sm mb-4">با ثبت ایمیل از آخرین تخفیف با خبر شوید.</p>
+                    <form id="newsletter-form" class="flex">
+                        <div class="relative flex-grow">
+                            <input type="email" placeholder="ایمیل" required
+                                class="w-full pr-2 py-2 bg-transparent border-b border-gray-400 border-opacity-25 focus:border-primary focus:outline-none text-secondary">
+                            <button type="submit" class="absolute left-0 top-1/2 -translate-y-1/2">
+                                <svg width="25" height="18" viewBox="0 0 25 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="group">
+                                    <path
+                                        d="M22 0.999878H3C1.89543 0.999878 1 1.89531 1 2.99988V14.9999C1 16.1044 1.89543 16.9999 3 16.9999H22C23.1046 16.9999 24 16.1044 24 14.9999V2.99988C24 1.89531 23.1046 0.999878 22 0.999878Z"
+                                        stroke="#787878" stroke-width="1.00138" stroke-linecap="round"
+                                        stroke-linejoin="round" class="group-hover:stroke-primary transition-colors" />
+                                    <path d="M23.4109 1.58203L12.4999 10.5L1.58887 1.58203" stroke="#787878"
+                                        stroke-width="1.00138" stroke-linecap="round" stroke-linejoin="round"
+                                        class="group-hover:stroke-primary transition-colors" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="flex lg:hidden items-center gap-6 mt-6">
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                </a>
+            </div>
+
+            <!-- Separator -->
+            <div class="border my-4 md:my-8"></div>
+
+            <!-- Copyright -->
+            <div class="text-text-dark text-center" dir="ltr">© 2023 All rights reserved</div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
