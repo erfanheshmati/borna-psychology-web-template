@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (optionItems) {
       optionItems.forEach((option) => {
         const optionCircle = option.querySelector(".option-circle");
-        optionCircle.classList.remove("bg-green-500");
+        optionCircle.classList.remove("bg-[#8bc94d]");
         optionCircle.classList.add("border", "border-black");
 
         const checkIcon = option.querySelector(".check-icon");
