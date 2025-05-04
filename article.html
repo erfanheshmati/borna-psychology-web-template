@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقاله</title>
+    <meta name="description" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-side relative">
+    <!-- Background Ecllipse -->
+    <img src="./assets/images/ellipse.svg" alt="ecllipse" class="hidden lg:block absolute top-0 right-0 -z-10">
+
+    <!-- Header/Navigation -->
+    <header class="bg-white md:bg-transparent h-[68px] md:h-auto">
+        <div class="container py-1 md:py-6">
+            <nav class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="md:hidden lg:block flex-shrink-0 z-10">
+                    <a href="index.html" class="block">
+                        <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا"
+                            class="w-[100px] md:w-[162px] h-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8 px-8 py-2 bg-gray-50 rounded-full border z-10">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        صفحه اصلی
+                    </a>
+                    <!-- Dropdown for آخرین تست‌ها -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            آخرین تست‌ها
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                1</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                2</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                3</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown for تست‌های برتر -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            تست‌های برتر
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 1
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 2
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 3
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors py-2">
+                        بوت کمپ
+                    </a>
+                    <a href="about-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        درباره ما
+                    </a>
+                    <a href="contact-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        ارتباط با ما
+                    </a>
+                </div>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8">
+                    <a href="./login.html">
+                        <span class="icon-login text-2xl hover:text-primary transition-colors"></span>
+                    </a>
+                    <button>
+                        <span class="icon-search text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                    <button>
+                        <span class="icon-profile text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Buttons -->
+                <div class="flex md:hidden items-center gap-4">
+                    <a href="./login.html" class="pt-1.5">
+                        <span class="icon-login text-xl text-neutral-700"></span>
+                    </a>
+                    <button>
+                        <img src="./assets/images/mobile-search.svg" alt="">
+                    </button>
+                    <button>
+                        <img src="./assets/images/mobile-profile.svg" alt="">
+                    </button>
+                    <button id="mobile-menu-button" class="text-secondary focus:outline-none">
+                        <img src="./assets/images/mobile-menu.svg" alt="">
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <a href="index.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    صفحه اصلی
+                </a>
+                <div class="border my-2"></div>
+                <!-- Dropdown for آخرین تست‌ها -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        آخرین تست‌ها
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <!-- Dropdown for تست‌های برتر -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        تست‌های برتر
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <a href="#" class="block py-2 text-secondary hover:text-primary text-center">
+                    بوت کمپ
+                </a>
+                <div class="border my-2"></div>
+                <a href="about-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    درباره ما
+                </a>
+                <div class="border my-2"></div>
+                <a href="contact-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    ارتباط با ما
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-8 md:py-12">
+        <div class="container">
+            <!-- Article Layout -->
+            <div class="flex flex-col lg:flex-row gap-10 md:gap-14">
+                <!-- Main Content -->
+                <div class="w-full lg:w-8/12 xl:w-9/12 flex flex-col gap-4 md:gap-8">
+                    <!-- Article Header -->
+                    <h1 class="text-2xl md:text-4xl font-medium text-black">خودشناسی</h1>
+
+                    <!-- Article Featured Image -->
+                    <div class="w-full h-auto rounded-2xl overflow-hidden">
+                        <img src="./assets/images/article/main-article-image.png" alt="" class="w-full h-auto">
+                    </div>
+
+                    <!-- Article Content -->
+                    <div class="prose max-w-none space-y-4">
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            خودشناسی از جمله‌ حوزه‌هایی است که برای بسیاری از انسان‌ها جذاب و دوست‌داشتنی است. نگاهی به
+                            تاریخ مکتوب انسان هم نشان می‌دهد که معمولاً دانشمندان، حکیمان و سخن‌ورانی که می‌توانسته‌اند
+                            از انسان برای انسان بگویند، یا ویژگی‌های هر فرد را در پیش چشمانش تجزیه و تحلیل کنند، از
+                            اقبال عمومی بهره‌مند بوده‌اند.
+                        </p>
+
+                        <h2 class="text-xl md:text-2xl text-black">۱. هدف از خودشناسی در روانشناسی چیست؟</h2>
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            ما در متمم، عموماً از زاویه‌ی روانشناسی به بحث خودشناسی نگاه می‌کنیم. روانشناسان، الگوهای
+                            بسیار متنوعی برای سنجش صفات شخصیتی و ویژگی های شخصیتی و ساختار شخصیت ارائه کرده‌اند که هر
+                            کدام، مزیت‌ها، محدودیت‌ها و کاربردهای خاص خود را داراست.
+                        </p>
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            معمولاً وقتی از خودشناسی صحبت می‌کنیم، قصد داریم با استفاده از این الگوها و مدل‌ها، صفات و
+                            ویژگی‌های ذهنی و رفتاری خود را بهتر درک و تحلیل کنیم.
+                        </p>
+
+                        <h2 class="text-sm md:text-base text-xl md:text-2xl text-black">رویکرد متمم به بحث خودشناسی
+                            چیست؟</h2>
+                        <p class="text-secondary text-justify leading-loose">
+                            متمم در بخش بزرگی از مباحث خودشناسی و شخصیت شناسی خود به سراغ رویکرد صفاتی رفته و از آن
+                            استفاده کرده است. این را هم بگوییم که حتی اگر شخصیت شناسی صفاتی به گوش‌تان نخورده باشد،‌
+                            هم‌چنان بخش زیادی از آن‌چه به عنوان خودشناسی شنیده‌اید زیرمجموعه‌ی این رویکرد محسوب می‌شود
+                            (حتماً شما هم اصطلاحاتی مانند درونگرا، برونگرا، هیجان‌طلب، جزء‌نگر، احساسی و منطقی را در
+                            توصیف خود و دیگران به کار برده‌اید و می‌برید).
+                        </p>
+
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            طبیعی است وقتی از خودشناسی حرف می‌زنیم، از خود بپرسید «چرا باید برای خودشناسی وقت بگذارم؟» و
+                            «نتیجه خودشناسی چیست؟»
+                        </p>
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            خودشناسی مزایای بسیار زیادی دارد که در این‌جا به برخی از آن‌ها اشاره می‌کنیم. توجه به این
+                            موارد می‌تواند ضرورت خودشناسی را برای ما شفاف‌تر کند:
+                        </p>
+
+                        <h2 class="text-xl md:text-2xl text-black">۳. اهمیت خودشناسی در چیست؟</h2>
+
+                        <h3 class="text-lg md:text-xl text-black">تصمیم گیری بهتر</h3>
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            کسی که برای خودشناسی وقت می‌گذارد، کیفیت تصمیم‌ها و انتخاب‌هایش افزایش خواهد یافت. از
+                            ساده‌ترین تصمیم‌های زندگی تا تصمیم‌های بسیار پیچیده همگی به خودشناسی نیاز دارند.
+                        </p>
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            وقتی خودمان را می‌شناسیم و به صفات شخصیتی و سلسله مراتب ارزشهایمان توجه داریم، گزینه‌های
+                            مناسب‌تری را انتخاب می‌کنیم و احتمال این‌که بعداً پشیمانی را تجربه کنیم کاهش خواهد یافت.
+                        </p>
+
+                        <h3 class="text-xl md:text-xl text-black">زمینه‌سازی برای تغییر و توسعه فردی</h3>
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            نخستین گام در تغییر و بهبود این است که خودمان و ویژگیهایمان را بشناسیم. ما تا وقتی «وضعیت
+                            موجود» را ندانیم و به رسمیت نشناسیم، چگونه می‌توانیم حرکت به سمت «وضعیت مطلوب» را آغاز کنیم؟
+                        </p>
+                        <p class="text-sm md:text-base text-secondary text-justify leading-loose">
+                            هیچ‌کس نمی‌تواند ادعا کند که مجموعه‌ای از بهترین عادات، رفتار و ویژگیهای شخصیتی را دارد. به
+                            همین علت بسیاری از ما علاقه داریم همواره در مسیر مسیر بهبود و توسعه فردی قدم برداریم. اما تا
+                            زمانی که خود را به خوبی نشناسیم، تلاش‌هایی که در این زمینه انجام می‌دهیم کم‌اثر یا بی‌اثر
+                            خواهد بود.
+                        </p>
+                    </div>
+
+                    <!-- Article Meta Info -->
+                    <div class="flex flex-wrap items-center justify-between">
+                        <div class="flex items-center gap-2 text-text-gray text-sm">
+                            <span>آرزو محمدعلیزاده</span>
+                            <span>|</span>
+                            <span>۱۴ شهریور</span>
+                            <span>|</span>
+                            <span>۱۰ دقیقه</span>
+                        </div>
+
+                        <div class="flex items-center gap-4 mt-4 md:mt-0">
+                            <button
+                                class="flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-gray-50 transition-colors">
+                                <img src="./assets/images/article/copy-icon.svg" alt="Copy" class="w-5 h-5">
+                                <span class="text-sm md:text-base">کپی لینک پست</span>
+                            </button>
+                            <button
+                                class="flex items-center gap-2 px-4 py-2 border rounded-lg bg-[#23242E] text-white hover:bg-opacity-90 transition-colors">
+                                <img src="./assets/images/article/share-icon.svg" alt="Share" class="w-5 h-5">
+                                <span class="text-sm md:text-base">اشتراک گذاری</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="w-full lg:w-4/12 xl:w-3/12 flex flex-col md:flex-row lg:flex-col gap-8">
+                    <!-- Related Articles -->
+                    <div class="flex flex-col gap-4 pt-6 w-full md:w-1/2 lg:w-full">
+                        <h3 class="text-xl md:text-2xl font-medium text-black">مقالات مرتبط</h3>
+                        <div class="space-y-4">
+                            <!-- Related Article 1 -->
+                            <a href="#"
+                                class="bg-white border border-gray-200 rounded-xl overflow-hidden flex hover:border-primary transition-colors">
+                                <div class="w-1/3">
+                                    <img src="./assets/images/article/article-image-1.png" alt=""
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <div class="w-2/3 p-3">
+                                    <h4 class="text-sm text-secondary font-medium mb-2">اضطراب اجتماعی یا فوبی اجتماعی
+                                    </h4>
+                                    <p class="text-xs text-text-gray">یکی از اختلالات رایج در جامعه ایران است و افراد
+                                        زیادی نادانسته به آن مبتلا هستند.</p>
+                                </div>
+                            </a>
+                            <!-- Related Article 2 -->
+                            <a href="#"
+                                class="bg-white border border-gray-200 rounded-xl overflow-hidden flex hover:border-primary transition-colors">
+                                <div class="w-1/3">
+                                    <img src="./assets/images/article/article-image-2.png" alt=""
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <div class="w-2/3 p-3">
+                                    <h4 class="text-sm text-secondary font-medium mb-2">استرس و تیپ های شخصیتی</h4>
+                                    <p class="text-xs text-text-gray">استرس و تیپ های شخصیتی یکی از مواردی هستند که در
+                                        جلسات مشاوره برای استرس ...</p>
+                                </div>
+                            </a>
+                            <!-- Related Article 3 -->
+                            <a href="#"
+                                class="bg-white border border-gray-200 rounded-xl overflow-hidden flex hover:border-primary transition-colors">
+                                <div class="w-1/3">
+                                    <img src="./assets/images/article/article-image-3.png" alt=""
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <div class="w-2/3 p-3">
+                                    <h4 class="text-sm text-secondary font-medium mb-2">تاثیر غم و غصه بر قلب چیست؟</h4>
+                                    <p class="text-xs text-text-gray">تاثیر غم و غصه بر قلب خیلی فراتر از تصورات ما است!
+                                        تاثیر غم بر قلب نه با حساس درد بلکه با تاثیرات روانی ناشی از بیشتر در ارتباط
+                                        است.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Featured Post -->
+                    <div class="flex flex-col gap-4 pt-6 w-full md:w-1/2 lg:w-full">
+                        <h3 class="text-xl md:text-2xl font-medium text-black">مطلب برگزیده هفته</h3>
+                        <div class="space-y-4">
+                            <!-- Featured Post Item 1 -->
+                            <div class="flex flex-col gap-3 bg-bg-light p-4 rounded-xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1 text-xs text-text-gray">
+                                        <img src="./assets/images/article/folder-icon.svg" alt="Folder" class="w-4 h-4">
+                                        <span>روانکاوی</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs text-text-gray">
+                                        <img src="./assets/images/article/clock-icon.svg" alt="Clock" class="w-4 h-4">
+                                        <span>چهار روز قبل</span>
+                                    </div>
+                                </div>
+                                <h4 class="text-lg text-secondary">رابطه سیگار و افسردگی چیست؟</h4>
+                                <p class="text-sm text-text-gray">نیکوتین ترشح هورمون دوپامین شیمیایی را در مغز
+                                    تحریک می‌کند.</p>
+                                <a href="#" class="inline-flex items-center gap-1 text-secondary text-sm group">
+                                    <span class="group-hover:text-primary transition-colors">بیشتر بخوانید</span>
+                                    <img src="./assets/images/article/arrow-left.svg" alt="Arrow" class="w-4 h-4">
+                                </a>
+                            </div>
+                            <!-- Featured Post Item 2 -->
+                            <div class="flex flex-col gap-3 bg-bg-light p-4 rounded-xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1 text-xs text-text-gray">
+                                        <img src="./assets/images/article/folder-icon.svg" alt="Folder" class="w-4 h-4">
+                                        <span>روانکاوی</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs text-text-gray">
+                                        <img src="./assets/images/article/clock-icon.svg" alt="Clock" class="w-4 h-4">
+                                        <span>چهار روز قبل</span>
+                                    </div>
+                                </div>
+                                <h4 class="text-lg text-secondary">رابطه سیگار و افسردگی چیست؟</h4>
+                                <p class="text-sm text-text-gray">نیکوتین ترشح هورمون دوپامین شیمیایی را در مغز
+                                    تحریک می‌کند.</p>
+                                <a href="#" class="inline-flex items-center gap-1 text-secondary text-sm group">
+                                    <span class="group-hover:text-primary transition-colors">بیشتر بخوانید</span>
+                                    <img src="./assets/images/article/arrow-left.svg" alt="Arrow" class="w-4 h-4">
+                                </a>
+                            </div>
+                            <!-- Featured Post Item 3 -->
+                            <div class="flex flex-col gap-3 bg-bg-light p-4 rounded-xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1 text-xs text-text-gray">
+                                        <img src="./assets/images/article/folder-icon.svg" alt="Folder" class="w-4 h-4">
+                                        <span>روانکاوی</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs text-text-gray">
+                                        <img src="./assets/images/article/clock-icon.svg" alt="Clock" class="w-4 h-4">
+                                        <span>چهار روز قبل</span>
+                                    </div>
+                                </div>
+                                <h4 class="text-lg text-secondary">رابطه سیگار و افسردگی چیست؟</h4>
+                                <p class="text-sm text-text-gray">نیکوتین ترشح هورمون دوپامین شیمیایی را در مغز
+                                    تحریک می‌کند.</p>
+                                <a href="#" class="inline-flex items-center gap-1 text-secondary text-sm group">
+                                    <span class="group-hover:text-primary transition-colors">بیشتر بخوانید</span>
+                                    <img src="./assets/images/article/arrow-left.svg" alt="Arrow" class="w-4 h-4">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-footer pt-20 md:pt-28 pb-4 md:pb-8 mt-12">
+        <div class="container">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="flex flex-col gap-4 col-span-2 lg:col-span-1 order-1">
+                    <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا" class="w-[162px] h-auto">
+                    <p class="text-text-dark text-opacity-90 text-sm leading-relaxed text-justify">
+                        روانشناسی برنا با مفهوم ارتقاء ذهنی و روانی مراجعه‌کنندگان، به مراقبت و توسعه افراد و خانواده‌ها
+                        اختصاص دارد. با توجه به اهمیت بهبود روانی در زندگی روزمره، در راستای بهبود کیفیت زندگی افراد کمک
+                        می‌کنند.
+                    </p>
+                    <!-- Social Media -->
+                    <div class="hidden lg:flex items-center justify-center gap-6">
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Recommended Tests -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-3 lg:order-2">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">تست‌های پیشنهادی</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست هوش
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-4 lg:order-3">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">دسترسی سریع</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="index.html"
+                                class="text-secondary text-sm hover:text-primary transition-colors">صفحه
+                                اصلی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درخواست مشاوره
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about-us.html" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درباره‌ی ما
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تماس با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="flex flex-col justify-center col-span-2 lg:col-span-1 order-2 lg:order-4">
+                    <p class="text-text-dark text-opacity-80 text-sm mb-4">با ثبت ایمیل از آخرین تخفیف با خبر شوید.</p>
+                    <form id="newsletter-form" class="flex">
+                        <div class="relative flex-grow">
+                            <input type="email" placeholder="ایمیل" required
+                                class="w-full pr-2 py-2 bg-transparent border-b border-gray-400 border-opacity-25 focus:border-primary focus:outline-none text-secondary">
+                            <button type="submit" class="absolute left-0 top-1/2 -translate-y-1/2">
+                                <svg width="25" height="18" viewBox="0 0 25 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="group">
+                                    <path
+                                        d="M22 0.999878H3C1.89543 0.999878 1 1.89531 1 2.99988V14.9999C1 16.1044 1.89543 16.9999 3 16.9999H22C23.1046 16.9999 24 16.1044 24 14.9999V2.99988C24 1.89531 23.1046 0.999878 22 0.999878Z"
+                                        stroke="#787878" stroke-width="1.00138" stroke-linecap="round"
+                                        stroke-linejoin="round" class="group-hover:stroke-primary transition-colors" />
+                                    <path d="M23.4109 1.58203L12.4999 10.5L1.58887 1.58203" stroke="#787878"
+                                        stroke-width="1.00138" stroke-linecap="round" stroke-linejoin="round"
+                                        class="group-hover:stroke-primary transition-colors" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="flex lg:hidden items-center gap-6 mt-6">
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                </a>
+            </div>
+
+            <!-- Separator -->
+            <div class="border my-4 md:my-8"></div>
+
+            <!-- Copyright -->
+            <div class="text-text-dark text-center" dir="ltr">© 2023 All rights reserved</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
