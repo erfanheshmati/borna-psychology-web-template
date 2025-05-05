@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دسته‌بندی‌ تست‌ها</title>
+    <meta name="description" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-side relative">
+    <!-- Background Ecllipse -->
+    <img src="./assets/images/ellipse.svg" alt="ecllipse" class="hidden lg:block absolute top-0 right-0 -z-10">
+
+    <!-- Header/Navigation -->
+    <header class="bg-white md:bg-transparent h-[68px] md:h-auto">
+        <div class="container py-1 md:py-6">
+            <nav class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="md:hidden lg:block flex-shrink-0 z-10">
+                    <a href="index.html" class="block">
+                        <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا"
+                            class="w-[100px] md:w-[162px] h-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8 px-8 py-2 bg-gray-50 rounded-full border z-10">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        صفحه اصلی
+                    </a>
+                    <!-- Dropdown for آخرین تست‌ها -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            آخرین تست‌ها
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                1</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                2</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                3</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown for تست‌های برتر -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            تست‌های برتر
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 1
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 2
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 3
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors py-2">
+                        بوت کمپ
+                    </a>
+                    <a href="about-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        درباره ما
+                    </a>
+                    <a href="contact-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        ارتباط با ما
+                    </a>
+                </div>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8">
+                    <a href="./login.html">
+                        <span class="icon-login text-2xl hover:text-primary transition-colors"></span>
+                    </a>
+                    <button>
+                        <span class="icon-search text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                    <button>
+                        <span class="icon-profile text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Buttons -->
+                <div class="flex md:hidden items-center gap-4">
+                    <a href="./login.html" class="pt-1.5">
+                        <span class="icon-login text-xl text-neutral-700"></span>
+                    </a>
+                    <button>
+                        <img src="./assets/images/mobile-search.svg" alt="">
+                    </button>
+                    <button>
+                        <img src="./assets/images/mobile-profile.svg" alt="">
+                    </button>
+                    <button id="mobile-menu-button" class="text-secondary focus:outline-none">
+                        <img src="./assets/images/mobile-menu.svg" alt="">
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <a href="index.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    صفحه اصلی
+                </a>
+                <div class="border my-2"></div>
+                <!-- Dropdown for آخرین تست‌ها -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        آخرین تست‌ها
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <!-- Dropdown for تست‌های برتر -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        تست‌های برتر
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <a href="#" class="block py-2 text-secondary hover:text-primary text-center">
+                    بوت کمپ
+                </a>
+                <div class="border my-2"></div>
+                <a href="about-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    درباره ما
+                </a>
+                <div class="border my-2"></div>
+                <a href="contact-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    ارتباط با ما
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container py-8 md:py-16">
+            <!-- Cards Container -->
+            <div class="grid grid-cols-2 gap-4 sm:gap-8 md:gap-10 xl:gap-16">
+                <!-- Card 1: Educational Tests -->
+                <div class="bg-[#D0FFFA] rounded-[40px] shadow-md border-t-2 border-r-2 md:border border-[#00FFFF] md:border-[#191A23]"
+                    style="box-shadow: 0px 4px 0px 0px rgba(189, 189, 189, 1);">
+                    <div class="flex flex-col md:flex-row items-center h-full">
+                        <div class="w-10/12 md:w-1/2 flex flex-col items-center">
+                            <img src="./assets/images/category/card-1.png" alt="تست‌های تحصیلی"
+                                class="w-full h-auto object-cover md:pb-2">
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col items-center h-full relative">
+                            <h3
+                                class="w-full md:w-fit flex items-center justify-center text-sm sm:text-lg md:text-base lg:text-xl font-medium bg-white text-[#575757] md:rounded-2xl py-3 sm:py-4 px-3 lg:px-4 xl:px-6 mt-auto mb-10 sm:mb-12 md:mt-16">
+                                تست‌های تحصیلی
+                            </h3>
+                            <a href="#"
+                                class="hidden md:flex items-center gap-3 absolute bottom-4 left-4 lg:bottom-8 lg:left-8 group">
+                                <span class="text-xl font-medium">بزن بریم</span>
+                                <div
+                                    class="bg-[#191A23] rounded-full p-3 group-hover:rotate-[30deg] transition-transform duration-200">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.25 13.7009C0.532561 14.1151 0.286748 15.0325 0.700962 15.75C1.11518 16.4674 2.03256 16.7132 2.75 16.299L1.25 13.7009ZM20.7694 5.38818C20.9838 4.58798 20.5089 3.76548 19.7087 3.55107L6.66874 0.0570084C5.86854 -0.157404 5.04603 0.317469 4.83162 1.11767C4.61721 1.91787 5.09208 2.74037 5.89228 2.95479L17.4834 6.06061L14.3776 17.6517C14.1631 18.4519 14.638 19.2744 15.4382 19.4888C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38818ZM2.75 16.299L20.0705 6.29899L18.5705 3.70092L1.25 13.7009L2.75 16.299Z"
+                                            fill="#00D0FF" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Child Cognitive Assessment -->
+                <div class="bg-[#FFD7EBB0] rounded-[40px] shadow-md border-t-2 border-r-2 md:border border-[#FF00D0] md:border-[#191A23]"
+                    style="box-shadow: 0px 4px 0px 0px rgba(189, 189, 189, 1);">
+                    <div class="flex flex-col md:flex-row items-center h-full">
+                        <div class="w-10/12 md:w-1/2 flex flex-col items-center">
+                            <img src="./assets/images/category/card-2.png" alt="تست‌های رشد و کودک"
+                                class="w-full h-auto object-cover md:pb-2">
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col items-center h-full relative">
+                            <h3
+                                class="w-full md:w-fit flex items-center justify-center text-sm sm:text-lg md:text-base lg:text-xl font-medium bg-white text-[#575757] md:rounded-2xl py-3 sm:py-4 px-3 lg:px-4 xl:px-6 mt-auto mb-10 sm:mb-12 md:mt-16">
+                                تست‌های رشد و کودک
+                            </h3>
+                            <a href="#"
+                                class="hidden md:flex items-center gap-3 absolute bottom-4 left-4 lg:bottom-8 lg:left-8 group">
+                                <span class="text-xl font-medium">بزن بریم</span>
+                                <div
+                                    class="bg-[#191A23] rounded-full p-3 group-hover:rotate-[30deg] transition-transform duration-200">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.25 13.7009C0.532561 14.1151 0.286748 15.0325 0.700962 15.75C1.11518 16.4674 2.03256 16.7132 2.75 16.299L1.25 13.7009ZM20.7694 5.38818C20.9838 4.58798 20.5089 3.76548 19.7087 3.55107L6.66874 0.0570084C5.86854 -0.157404 5.04603 0.317469 4.83162 1.11767C4.61721 1.91787 5.09208 2.74037 5.89228 2.95479L17.4834 6.06061L14.3776 17.6517C14.1631 18.4519 14.638 19.2744 15.4382 19.4888C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38818ZM2.75 16.299L20.0705 6.29899L18.5705 3.70092L1.25 13.7009L2.75 16.299Z"
+                                            fill="#FF00F6" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Child Development Tests -->
+                <div class="bg-[#FAFFCE] rounded-[40px] shadow-md border-t-2 border-r-2 md:border border-[#E5FF00] md:border-[#191A23]"
+                    style="box-shadow: 0px 4px 0px 0px rgba(189, 189, 189, 1);">
+                    <div class="flex flex-col md:flex-row items-center h-full">
+                        <div class="w-10/12 md:w-1/2 flex flex-col items-center">
+                            <img src="./assets/images/category/card-3.png" alt=" استعدادیابی تحصیلی"
+                                class="w-full h-auto object-cover md:pb-2">
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col items-center h-full relative">
+                            <h3
+                                class="w-full md:w-fit flex items-center justify-center text-sm sm:text-lg md:text-base lg:text-xl font-medium bg-white text-[#575757] md:rounded-2xl py-3 sm:py-4 px-3 lg:px-4 xl:px-6 mt-auto mb-10 sm:mb-12 md:mt-16">
+                                استعدادیابی تحصیلی
+                            </h3>
+                            <a href="#"
+                                class="hidden md:flex items-center gap-3 absolute bottom-4 left-4 lg:bottom-8 lg:left-8 group">
+                                <span class="text-xl font-medium">بزن بریم</span>
+                                <div
+                                    class="bg-[#191A23] rounded-full p-3 group-hover:rotate-[30deg] transition-transform duration-200">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.25 13.7009C0.532561 14.1151 0.286748 15.0325 0.700962 15.75C1.11518 16.4674 2.03256 16.7132 2.75 16.299L1.25 13.7009ZM20.7694 5.38818C20.9838 4.58798 20.5089 3.76548 19.7087 3.55107L6.66874 0.0570084C5.86854 -0.157404 5.04603 0.317469 4.83162 1.11767C4.61721 1.91787 5.09208 2.74037 5.89228 2.95479L17.4834 6.06061L14.3776 17.6517C14.1631 18.4519 14.638 19.2744 15.4382 19.4888C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38818ZM2.75 16.299L20.0705 6.29899L18.5705 3.70092L1.25 13.7009L2.75 16.299Z"
+                                            fill="#E5FF00" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Academic Talent Package -->
+                <div class="bg-[#F7EFE4] rounded-[40px] shadow-md border-t-2 border-r-2 md:border border-[#BA7F00] md:border-[#191A23]"
+                    style="box-shadow: 0px 4px 0px 0px rgba(189, 189, 189, 1);">
+                    <div class="flex flex-col md:flex-row items-center h-full">
+                        <div class="w-10/12 md:w-1/2 flex flex-col items-center">
+                            <img src="./assets/images/category/card-4.png" alt="راهنمای انتخاب رشته و شغل"
+                                class="w-full h-auto object-cover md:pb-2">
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col items-center h-full relative">
+                            <h3
+                                class="w-full md:w-fit flex items-center justify-center text-sm sm:text-lg md:text-base lg:text-xl font-medium bg-white text-[#575757] md:rounded-2xl py-3 sm:py-4 px-3 lg:px-4 xl:px-6 mt-auto mb-10 sm:mb-12 md:mt-16">
+                                انتخاب رشته و شغل
+                            </h3>
+                            <a href="#"
+                                class="hidden md:flex items-center gap-3 absolute bottom-4 left-4 lg:bottom-8 lg:left-8 group">
+                                <span class="text-xl font-medium">بزن بریم</span>
+                                <div
+                                    class="bg-[#191A23] rounded-full p-3 group-hover:rotate-[30deg] transition-transform duration-200">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.25 13.7009C0.532561 14.1151 0.286748 15.0325 0.700962 15.75C1.11518 16.4674 2.03256 16.7132 2.75 16.299L1.25 13.7009ZM20.7694 5.38818C20.9838 4.58798 20.5089 3.76548 19.7087 3.55107L6.66874 0.0570084C5.86854 -0.157404 5.04603 0.317469 4.83162 1.11767C4.61721 1.91787 5.09208 2.74037 5.89228 2.95479L17.4834 6.06061L14.3776 17.6517C14.1631 18.4519 14.638 19.2744 15.4382 19.4888C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38818ZM2.75 16.299L20.0705 6.29899L18.5705 3.70092L1.25 13.7009L2.75 16.299Z"
+                                            fill="#BA7F00" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Course and Career Guide -->
+                <div class="bg-[#FFD7EBB0] rounded-[40px] shadow-md border-t-2 border-r-2 md:border border-[#FF00D0] md:border-[#191A23]"
+                    style="box-shadow: 0px 4px 0px 0px rgba(189, 189, 189, 1);">
+                    <div class="flex flex-col md:flex-row items-center h-full">
+                        <div class="w-10/12 md:w-1/2 flex flex-col items-center">
+                            <img src="./assets/images/category/card-5.png" alt="ارزیابی شناختی کودک"
+                                class="w-full h-auto object-cover md:pb-2">
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col items-center h-full relative">
+                            <h3
+                                class="w-full md:w-fit flex items-center justify-center text-sm sm:text-lg md:text-base lg:text-xl font-medium bg-white text-[#575757] md:rounded-2xl py-3 sm:py-4 px-3 lg:px-4 xl:px-6 mt-auto mb-10 sm:mb-12 md:mt-16">
+                                ارزیابی شناختی کودک
+                            </h3>
+                            <a href="#"
+                                class="hidden md:flex items-center gap-3 absolute bottom-4 left-4 lg:bottom-8 lg:left-8 group">
+                                <span class="text-xl font-medium">بزن بریم</span>
+                                <div
+                                    class="bg-[#191A23] rounded-full p-3 group-hover:rotate-[30deg] transition-transform duration-200">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.25 13.7009C0.532561 14.1151 0.286748 15.0325 0.700962 15.75C1.11518 16.4674 2.03256 16.7132 2.75 16.299L1.25 13.7009ZM20.7694 5.38818C20.9838 4.58798 20.5089 3.76548 19.7087 3.55107L6.66874 0.0570084C5.86854 -0.157404 5.04603 0.317469 4.83162 1.11767C4.61721 1.91787 5.09208 2.74037 5.89228 2.95479L17.4834 6.06061L14.3776 17.6517C14.1631 18.4519 14.638 19.2744 15.4382 19.4888C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38818ZM2.75 16.299L20.0705 6.29899L18.5705 3.70092L1.25 13.7009L2.75 16.299Z"
+                                            fill="#FF00D0" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Financial Cognitive Assessment -->
+                <div class="bg-[#D0FFFA] rounded-[40px] shadow-md border-t-2 border-r-2 md:border border-[#00FFFF] md:border-[#191A23]"
+                    style="box-shadow: 0px 4px 0px 0px rgba(189, 189, 189, 1);">
+                    <div class="flex flex-col md:flex-row items-center h-full">
+                        <div class="w-10/12 md:w-1/2 flex flex-col items-center">
+                            <img src="./assets/images/category/card-6.png" alt="ارزیابی شناختی مالی"
+                                class="w-full h-auto object-cover md:pb-2">
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col items-center h-full relative">
+                            <h3
+                                class="w-full md:w-fit flex items-center justify-center text-sm sm:text-lg md:text-base lg:text-xl font-medium bg-white text-[#575757] md:rounded-2xl py-3 sm:py-4 px-3 lg:px-4 xl:px-6 mt-auto mb-10 sm:mb-12 md:mt-16">
+                                ارزیابی شناختی مالی
+                            </h3>
+                            <a href="#"
+                                class="hidden md:flex items-center gap-3 absolute bottom-4 left-4 lg:bottom-8 lg:left-8 group">
+                                <span class="text-xl font-medium">بزن بریم</span>
+                                <div
+                                    class="bg-[#191A23] rounded-full p-3 group-hover:rotate-[30deg] transition-transform duration-200">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.25 13.7009C0.532561 14.1151 0.286748 15.0325 0.700962 15.75C1.11518 16.4674 2.03256 16.7132 2.75 16.299L1.25 13.7009ZM20.7694 5.38818C20.9838 4.58798 20.5089 3.76548 19.7087 3.55107L6.66874 0.0570084C5.86854 -0.157404 5.04603 0.317469 4.83162 1.11767C4.61721 1.91787 5.09208 2.74037 5.89228 2.95479L17.4834 6.06061L14.3776 17.6517C14.1631 18.4519 14.638 19.2744 15.4382 19.4888C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38818ZM2.75 16.299L20.0705 6.29899L18.5705 3.70092L1.25 13.7009L2.75 16.299Z"
+                                            fill="#00FFFF" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Career Talent Package -->
+                <div class="bg-[#F2E6D49C] rounded-[40px] shadow-md border-t-2 border-r-2 md:border border-[#BA7F00] md:border-[#191A23]"
+                    style="box-shadow: 0px 4px 0px 0px rgba(189, 189, 189, 1);">
+                    <div class="flex flex-col md:flex-row items-center h-full">
+                        <div class="w-10/12 md:w-1/2 flex flex-col items-center">
+                            <img src="./assets/images/category/card-7.png" alt="پکیج‌ استعدادیابی شغلی "
+                                class="w-full h-auto object-cover md:pb-2">
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col items-center h-full relative">
+                            <h3
+                                class="w-full md:w-fit flex items-center justify-center text-sm sm:text-lg md:text-base lg:text-xl font-medium bg-white text-[#575757] md:rounded-2xl py-3 sm:py-4 px-3 lg:px-4 xl:px-6 mt-auto mb-10 sm:mb-12 md:mt-16">
+                                استعدادیابی شغلی
+                            </h3>
+                            <a href="#"
+                                class="hidden md:flex items-center gap-3 absolute bottom-4 left-4 lg:bottom-8 lg:left-8 group">
+                                <span class="text-xl font-medium">بزن بریم</span>
+                                <div
+                                    class="bg-[#191A23] rounded-full p-3 group-hover:rotate-[30deg] transition-transform duration-200">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.25 13.7009C0.532561 14.1151 0.286748 15.0325 0.700962 15.75C1.11518 16.4674 2.03256 16.7132 2.75 16.299L1.25 13.7009ZM20.7694 5.38818C20.9838 4.58798 20.5089 3.76548 19.7087 3.55107L6.66874 0.0570084C5.86854 -0.157404 5.04603 0.317469 4.83162 1.11767C4.61721 1.91787 5.09208 2.74037 5.89228 2.95479L17.4834 6.06061L14.3776 17.6517C14.1631 18.4519 14.638 19.2744 15.4382 19.4888C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38818ZM2.75 16.299L20.0705 6.29899L18.5705 3.70092L1.25 13.7009L2.75 16.299Z"
+                                            fill="#BA7F00" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Intelligence and Memory -->
+                <div class="bg-[#FAFFCE] rounded-[40px] shadow-md border-t-2 border-r-2 md:border border-[#E5FF00] md:border-[#191A23]"
+                    style="box-shadow: 0px 4px 0px 0px rgba(189, 189, 189, 1);">
+                    <div class="flex flex-col md:flex-row items-center h-full">
+                        <div class="w-10/12 md:w-1/2 flex flex-col items-center">
+                            <img src="./assets/images/category/card-8.png" alt="هوش و حافظه"
+                                class="w-full h-auto object-cover md:pb-2">
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col items-center h-full relative">
+                            <h3
+                                class="w-full md:w-fit flex items-center justify-center text-sm sm:text-lg md:text-base lg:text-xl font-medium bg-white text-[#575757] md:rounded-2xl py-3 sm:py-4 px-3 lg:px-4 xl:px-6 mt-auto mb-10 sm:mb-12 md:mt-16">
+                                هوش و حافظه
+                            </h3>
+                            <a href="#"
+                                class="hidden md:flex items-center gap-3 absolute bottom-4 left-4 lg:bottom-8 lg:left-8 group">
+                                <span class="text-xl font-medium">بزن بریم</span>
+                                <div
+                                    class="bg-[#191A23] rounded-full p-3 group-hover:rotate-[30deg] transition-transform duration-200">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.25 13.7009C0.532561 14.1151 0.286748 15.0325 0.700962 15.75C1.11518 16.4674 2.03256 16.7132 2.75 16.299L1.25 13.7009ZM20.7694 5.38818C20.9838 4.58798 20.5089 3.76548 19.7087 3.55107L6.66874 0.0570084C5.86854 -0.157404 5.04603 0.317469 4.83162 1.11767C4.61721 1.91787 5.09208 2.74037 5.89228 2.95479L17.4834 6.06061L14.3776 17.6517C14.1631 18.4519 14.638 19.2744 15.4382 19.4888C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38818ZM2.75 16.299L20.0705 6.29899L18.5705 3.70092L1.25 13.7009L2.75 16.299Z"
+                                            fill="#E5FF00" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-footer pt-20 md:pt-28 pb-4 md:pb-8 mt-12">
+        <div class="container">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="flex flex-col gap-4 col-span-2 lg:col-span-1 order-1">
+                    <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا" class="w-[162px] h-auto">
+                    <p class="text-text-dark text-opacity-90 text-sm leading-relaxed text-justify">
+                        روانشناسی برنا با مفهوم ارتقاء ذهنی و روانی مراجعه‌کنندگان، به مراقبت و توسعه افراد و خانواده‌ها
+                        اختصاص دارد. با توجه به اهمیت بهبود روانی در زندگی روزمره، در راستای بهبود کیفیت زندگی افراد کمک
+                        می‌کنند.
+                    </p>
+                    <!-- Social Media -->
+                    <div class="hidden lg:flex items-center justify-center gap-6">
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Recommended Tests -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-3 lg:order-2">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">تست‌های پیشنهادی</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست هوش
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-4 lg:order-3">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">دسترسی سریع</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="index.html"
+                                class="text-secondary text-sm hover:text-primary transition-colors">صفحه
+                                اصلی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درخواست مشاوره
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about-us.html" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درباره‌ی ما
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تماس با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="flex flex-col justify-center col-span-2 lg:col-span-1 order-2 lg:order-4">
+                    <p class="text-text-dark text-opacity-80 text-sm mb-4">با ثبت ایمیل از آخرین تخفیف با خبر شوید.</p>
+                    <form id="newsletter-form" class="flex">
+                        <div class="relative flex-grow">
+                            <input type="email" placeholder="ایمیل" required
+                                class="w-full pr-2 py-2 bg-transparent border-b border-gray-400 border-opacity-25 focus:border-primary focus:outline-none text-secondary">
+                            <button type="submit" class="absolute left-0 top-1/2 -translate-y-1/2">
+                                <svg width="25" height="18" viewBox="0 0 25 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="group">
+                                    <path
+                                        d="M22 0.999878H3C1.89543 0.999878 1 1.89531 1 2.99988V14.9999C1 16.1044 1.89543 16.9999 3 16.9999H22C23.1046 16.9999 24 16.1044 24 14.9999V2.99988C24 1.89531 23.1046 0.999878 22 0.999878Z"
+                                        stroke="#787878" stroke-width="1.00138" stroke-linecap="round"
+                                        stroke-linejoin="round" class="group-hover:stroke-primary transition-colors" />
+                                    <path d="M23.4109 1.58203L12.4999 10.5L1.58887 1.58203" stroke="#787878"
+                                        stroke-width="1.00138" stroke-linecap="round" stroke-linejoin="round"
+                                        class="group-hover:stroke-primary transition-colors" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="flex lg:hidden items-center gap-6 mt-6">
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                </a>
+            </div>
+
+            <!-- Separator -->
+            <div class="border my-4 md:my-8"></div>
+
+            <!-- Copyright -->
+            <div class="text-text-dark text-center" dir="ltr">© 2023 All rights reserved</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
