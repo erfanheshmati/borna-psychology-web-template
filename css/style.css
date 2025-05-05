@@ -75,5 +75,51 @@
 }
 
 .swiper .swiper-pagination-bullet-active {
-  background-color: #096e1c; /* Primary color */
+  background-color: #2aff00; /* Primary color */
+}
+
+/* Search page gradients */
+.category-card-pink {
+  background: linear-gradient(to bottom, #ffffff, rgba(255, 175, 238, 0.4));
+}
+
+.category-card-blue {
+  background: linear-gradient(to bottom, #ffffff, #bef8ff);
+}
+
+.category-card-beige {
+  background: linear-gradient(to bottom, #ffffff, #f6e2c8);
+}
+
+.category-card-yellow {
+  background: linear-gradient(to bottom, #ffffff, #f6ffa3);
+}
+
+/* Search sidebar gradient */
+.search-sidebar-gradient {
+  background: linear-gradient(to bottom, #e6ffde, #ffffff);
+}
+
+/* Search category button active state */
+.category-button {
+  transition: all 0.3s ease;
+}
+
+.category-button:hover h3 {
+  color: #4caf50;
+}
+
+.active-category h3 {
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.active-category::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #4caf50;
+  border-radius: 4px;
 }

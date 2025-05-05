@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جستجو</title>
+    <meta name="description" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body class="bg-gradient-side relative">
+    <!-- Background Ecllipse -->
+    <img src="./assets/images/ellipse.svg" alt="ecllipse" class="hidden lg:block absolute top-0 right-0 -z-10">
+
+    <!-- Header/Navigation -->
+    <header class="bg-white md:bg-transparent h-[68px] md:h-auto">
+        <div class="container py-1 md:py-6">
+            <nav class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="md:hidden lg:block flex-shrink-0 z-10">
+                    <a href="index.html" class="block">
+                        <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا"
+                            class="w-[100px] md:w-[162px] h-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8 px-8 py-2 bg-gray-50 rounded-full border z-10">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        صفحه اصلی
+                    </a>
+                    <!-- Dropdown for آخرین تست‌ها -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            آخرین تست‌ها
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                1</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                2</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">تست
+                                3</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown for تست‌های برتر -->
+                    <div class="relative group">
+                        <button class="text-secondary hover:text-primary transition-colors py-2 flex items-center">
+                            تست‌های برتر
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-1 transition-transform duration-200 transform group-hover:rotate-180"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-gray-50 shadow-lg rounded-lg p-2 min-w-[150px] z-50">
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 1
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 2
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 rounded">
+                                تست برتر 3
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors py-2">
+                        بوت کمپ
+                    </a>
+                    <a href="about-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        درباره ما
+                    </a>
+                    <a href="contact-us.html" class="text-secondary hover:text-primary transition-colors py-2">
+                        ارتباط با ما
+                    </a>
+                </div>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8">
+                    <a href="./login.html">
+                        <span class="icon-login text-2xl hover:text-primary transition-colors"></span>
+                    </a>
+                    <a href="./search.html">
+                        <span class="icon-search text-2xl hover:text-primary transition-colors"></span>
+                    </a>
+                    <button>
+                        <span class="icon-profile text-2xl hover:text-primary transition-colors"></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Buttons -->
+                <div class="flex md:hidden items-center gap-4">
+                    <a href="./login.html" class="pt-1.5">
+                        <span class="icon-login text-xl text-neutral-700"></span>
+                    </a>
+                    <a href="./search.html">
+                        <img src="./assets/images/mobile-search.svg" alt="">
+                    </a>
+                    <button>
+                        <img src="./assets/images/mobile-profile.svg" alt="">
+                    </button>
+                    <button id="mobile-menu-button" class="text-secondary focus:outline-none">
+                        <img src="./assets/images/mobile-menu.svg" alt="">
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <a href="index.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    صفحه اصلی
+                </a>
+                <div class="border my-2"></div>
+                <!-- Dropdown for آخرین تست‌ها -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        آخرین تست‌ها
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <!-- Dropdown for تست‌های برتر -->
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full py-2 text-secondary hover:text-primary text-center flex items-center justify-center mobile-dropdown-button">
+                        تست‌های برتر
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden py-2">
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 1</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 2</a>
+                        <a href="#" class="block py-2 text-secondary hover:text-primary text-center">تست برتر 3</a>
+                    </div>
+                </div>
+                <div class="border my-2"></div>
+                <a href="#" class="block py-2 text-secondary hover:text-primary text-center">
+                    بوت کمپ
+                </a>
+                <div class="border my-2"></div>
+                <a href="about-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    درباره ما
+                </a>
+                <div class="border my-2"></div>
+                <a href="contact-us.html" class="block py-2 text-secondary hover:text-primary text-center">
+                    ارتباط با ما
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        <!-- Search Section -->
+        <section class="container py-8 md:py-16">
+            <div class="flex flex-col gap-12 md:gap-20">
+                <!-- Search Box -->
+                <div class="w-full md:w-10/12 mx-auto bg-white rounded-lg border border-gray-300 relative">
+                    <input type="text"
+                        class="w-full p-3 md:p-4 text-gray-700 text-sm md:text-base rounded-lg focus:outline-none border focus:border-primary search-input"
+                        placeholder="عبارت خود را وارد کنید...">
+                    <div class="absolute left-3 md:left-4 top-1/2 transform -translate-y-1/2">
+                        <img src="./assets/images/search/search-icon.svg" alt="search">
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="flex flex-col gap-10">
+                    <!-- Test Categories Section 1 -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Header -->
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <img src="./assets/images/search/test-icon.svg" alt="test" class="w-5 h-5 md:w-6 md:h-6">
+                            <h3 class="text-xl md:text-3xl">آزمون</h3>
+                        </div>
+
+                        <!-- Desktop Grid -->
+                        <div
+                            class="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 border-b border-gray-300 pb-10">
+                            <!-- Category 1 -->
+                            <div class="bg-gradient-to-b from-white to-[#FFAFEE]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#C06EF3] bg-[#FFAFEE1A]">
+                                        <img src="./assets/images/search/Breastfeeding.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست‌های رشد و کودک</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 2 -->
+                            <div class="bg-gradient-to-b from-white to-[#F6FFA3]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#CED900] bg-[#F8FF6B26]">
+                                        <img src="./assets/images/search/Brain.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست های هوش و حافظه</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 3 -->
+                            <div class="bg-gradient-to-b from-white to-[#F6E2C8]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#997C70] bg-[#997C701A]">
+                                        <img src="./assets/images/search/Job.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست های شغلی و سازمانی</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 4 -->
+                            <div class="bg-gradient-to-b from-white to-[#BEF8FF]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#1B75E8] bg-[#1B75E826]">
+                                        <img src="./assets/images/search/School.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست‌های تحصیلی</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Slider -->
+                        <div class="md:hidden relative px-20">
+                            <!-- Swiper Container -->
+                            <div class="swiper testSwiper">
+                                <!-- Swiper Wrapper -->
+                                <div class="swiper-wrapper pb-3">
+                                    <!-- Slide 1 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 1 -->
+                                        <div class="bg-gradient-to-b from-white to-[#FFAFEE]/40 rounded-xl border border-[#FD74F4] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#C06EF3] bg-[#FFAFEE1A]">
+                                                    <img src="./assets/images/search/Breastfeeding.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست‌های رشد و کودک</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 2 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 2 -->
+                                        <div class="bg-gradient-to-b from-white to-[#F6FFA3]/40 rounded-xl border border-[#CED900] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#CED900] bg-[#F8FF6B26]">
+                                                    <img src="./assets/images/search/Brain.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست های هوش و حافظه</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 3 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 3 -->
+                                        <div class="bg-gradient-to-b from-white to-[#E8E8E8]/40 rounded-xl border border-[#997C70] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#997C70] bg-[#997C701A]">
+                                                    <img src="./assets/images/search/Job.svg" alt="" class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست های شغلی و سازمانی</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 4 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 4 -->
+                                        <div class="bg-gradient-to-b from-white to-[#BEF8FF]/40 rounded-xl border border-[#8DFFFD] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#1B75E8] bg-[#1B75E826]">
+                                                    <img src="./assets/images/search/School.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست‌های تحصیلی</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pagination -->
+                                <div class="swiper-pagination !relative !bottom-0"></div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <button id="test-slider-prev"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 transform z-10 group">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.5 3.64583C9.84856 3.64583 3.64583 9.84856 3.64583 17.5C3.64583 25.1514 9.84856 31.3542 17.5 31.3542C25.1514 31.3542 31.3542 25.1514 31.3542 17.5C31.3542 9.84856 25.1514 3.64583 17.5 3.64583ZM2.1875 17.5C2.1875 9.04314 9.04314 2.1875 17.5 2.1875C25.9569 2.1875 32.8125 9.04314 32.8125 17.5C32.8125 25.9569 25.9569 32.8125 17.5 32.8125C9.04314 32.8125 2.1875 25.9569 2.1875 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M25.5208 18.2292H8.75V16.7709H25.5208V18.2292Z" fill="black"
+                                        class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M24.489 17.5L19.9004 12.9114L20.9316 11.8802L26.0358 16.9844C26.3205 17.2692 26.3205 17.7309 26.0358 18.0156L20.9316 23.1198L19.9004 22.0886L24.489 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                </svg>
+                            </button>
+                            <button id="test-slider-next"
+                                class="rotate-180 absolute left-4 top-1/2 -translate-y-1/2 transform z-10 group">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.5 3.64583C9.84856 3.64583 3.64583 9.84856 3.64583 17.5C3.64583 25.1514 9.84856 31.3542 17.5 31.3542C25.1514 31.3542 31.3542 25.1514 31.3542 17.5C31.3542 9.84856 25.1514 3.64583 17.5 3.64583ZM2.1875 17.5C2.1875 9.04314 9.04314 2.1875 17.5 2.1875C25.9569 2.1875 32.8125 9.04314 32.8125 17.5C32.8125 25.9569 25.9569 32.8125 17.5 32.8125C9.04314 32.8125 2.1875 25.9569 2.1875 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M25.5208 18.2292H8.75V16.7709H25.5208V18.2292Z" fill="black"
+                                        class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M24.489 17.5L19.9004 12.9114L20.9316 11.8802L26.0358 16.9844C26.3205 17.2692 26.3205 17.7309 26.0358 18.0156L20.9316 23.1198L19.9004 22.0886L24.489 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bootcamp Categories Section 2 -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Header -->
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <img src="./assets/images/search/video-icon.svg" alt="test" class="w-5 h-5 md:w-6 md:h-6">
+                            <h3 class="text-xl md:text-3xl">بوت کمپ</h3>
+                        </div>
+
+                        <!-- Desktop Grid -->
+                        <div
+                            class="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 border-b border-gray-300 pb-10">
+                            <!-- Category 1 -->
+                            <div class="bg-gradient-to-b from-white to-[#FFAFEE]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#C06EF3] bg-[#FFAFEE1A]">
+                                        <img src="./assets/images/search/Breastfeeding.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست‌های رشد و کودک</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 2 -->
+                            <div class="bg-gradient-to-b from-white to-[#F6FFA3]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#CED900] bg-[#F8FF6B26]">
+                                        <img src="./assets/images/search/Brain.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست های هوش و حافظه</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 3 -->
+                            <div class="bg-gradient-to-b from-white to-[#F6E2C8]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#997C70] bg-[#997C701A]">
+                                        <img src="./assets/images/search/Job.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست های شغلی و سازمانی</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 4 -->
+                            <div class="bg-gradient-to-b from-white to-[#BEF8FF]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#1B75E8] bg-[#1B75E826]">
+                                        <img src="./assets/images/search/School.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست‌های تحصیلی</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Slider -->
+                        <div class="md:hidden relative px-20">
+                            <!-- Swiper Container -->
+                            <div class="swiper testSwiper">
+                                <!-- Swiper Wrapper -->
+                                <div class="swiper-wrapper pb-3">
+                                    <!-- Slide 1 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 1 -->
+                                        <div class="bg-gradient-to-b from-white to-[#FFAFEE]/40 rounded-xl border border-[#FD74F4] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#C06EF3] bg-[#FFAFEE1A]">
+                                                    <img src="./assets/images/search/Breastfeeding.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست‌های رشد و کودک</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 2 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 2 -->
+                                        <div class="bg-gradient-to-b from-white to-[#F6FFA3]/40 rounded-xl border border-[#CED900] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#CED900] bg-[#F8FF6B26]">
+                                                    <img src="./assets/images/search/Brain.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست های هوش و حافظه</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 3 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 3 -->
+                                        <div class="bg-gradient-to-b from-white to-[#E8E8E8]/40 rounded-xl border border-[#997C70] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#997C70] bg-[#997C701A]">
+                                                    <img src="./assets/images/search/Job.svg" alt="" class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست های شغلی و سازمانی</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 4 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 4 -->
+                                        <div class="bg-gradient-to-b from-white to-[#BEF8FF]/40 rounded-xl border border-[#8DFFFD] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#1B75E8] bg-[#1B75E826]">
+                                                    <img src="./assets/images/search/School.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست‌های تحصیلی</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pagination -->
+                                <div class="swiper-pagination !relative !bottom-0"></div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <button id="test-slider-prev"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 transform z-10 group">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.5 3.64583C9.84856 3.64583 3.64583 9.84856 3.64583 17.5C3.64583 25.1514 9.84856 31.3542 17.5 31.3542C25.1514 31.3542 31.3542 25.1514 31.3542 17.5C31.3542 9.84856 25.1514 3.64583 17.5 3.64583ZM2.1875 17.5C2.1875 9.04314 9.04314 2.1875 17.5 2.1875C25.9569 2.1875 32.8125 9.04314 32.8125 17.5C32.8125 25.9569 25.9569 32.8125 17.5 32.8125C9.04314 32.8125 2.1875 25.9569 2.1875 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M25.5208 18.2292H8.75V16.7709H25.5208V18.2292Z" fill="black"
+                                        class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M24.489 17.5L19.9004 12.9114L20.9316 11.8802L26.0358 16.9844C26.3205 17.2692 26.3205 17.7309 26.0358 18.0156L20.9316 23.1198L19.9004 22.0886L24.489 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                </svg>
+                            </button>
+                            <button id="test-slider-next"
+                                class="rotate-180 absolute left-4 top-1/2 -translate-y-1/2 transform z-10 group">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.5 3.64583C9.84856 3.64583 3.64583 9.84856 3.64583 17.5C3.64583 25.1514 9.84856 31.3542 17.5 31.3542C25.1514 31.3542 31.3542 25.1514 31.3542 17.5C31.3542 9.84856 25.1514 3.64583 17.5 3.64583ZM2.1875 17.5C2.1875 9.04314 9.04314 2.1875 17.5 2.1875C25.9569 2.1875 32.8125 9.04314 32.8125 17.5C32.8125 25.9569 25.9569 32.8125 17.5 32.8125C9.04314 32.8125 2.1875 25.9569 2.1875 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M25.5208 18.2292H8.75V16.7709H25.5208V18.2292Z" fill="black"
+                                        class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M24.489 17.5L19.9004 12.9114L20.9316 11.8802L26.0358 16.9844C26.3205 17.2692 26.3205 17.7309 26.0358 18.0156L20.9316 23.1198L19.9004 22.0886L24.489 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Weblog Categories Section 3 -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Header -->
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <img src="./assets/images/search/book-icon.svg" alt="test" class="w-5 h-5 md:w-6 md:h-6">
+                            <h3 class="text-xl md:text-3xl">وبلاگ</h3>
+                        </div>
+
+                        <!-- Desktop Grid -->
+                        <div
+                            class="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 border-b border-gray-300 pb-10">
+                            <!-- Category 1 -->
+                            <div class="bg-gradient-to-b from-white to-[#FFAFEE]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#C06EF3] bg-[#FFAFEE1A]">
+                                        <img src="./assets/images/search/Breastfeeding.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست‌های رشد و کودک</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 2 -->
+                            <div class="bg-gradient-to-b from-white to-[#F6FFA3]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#CED900] bg-[#F8FF6B26]">
+                                        <img src="./assets/images/search/Brain.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست های هوش و حافظه</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 3 -->
+                            <div class="bg-gradient-to-b from-white to-[#F6E2C8]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#997C70] bg-[#997C701A]">
+                                        <img src="./assets/images/search/Job.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست های شغلی و سازمانی</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Category 4 -->
+                            <div class="bg-gradient-to-b from-white to-[#BEF8FF]/40 rounded-xl border border-gray-100 p-5 category-card"
+                                data-category="test">
+                                <div class="flex flex-col items-center h-full gap-6 py-6">
+                                    <div
+                                        class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#1B75E8] bg-[#1B75E826]">
+                                        <img src="./assets/images/search/School.svg" alt="" class="w-20 h-20">
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/star-empty.svg" alt="Empty Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                        <img src="./assets/images/star-fill.svg" alt="Fill Star" class="w-6 h-6">
+                                    </div>
+                                    <h3 class="text-xl font-normal">تست‌های تحصیلی</h3>
+                                    <button
+                                        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        مشاهده
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Slider -->
+                        <div class="md:hidden relative px-20">
+                            <!-- Swiper Container -->
+                            <div class="swiper testSwiper">
+                                <!-- Swiper Wrapper -->
+                                <div class="swiper-wrapper pb-3">
+                                    <!-- Slide 1 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 1 -->
+                                        <div class="bg-gradient-to-b from-white to-[#FFAFEE]/40 rounded-xl border border-[#FD74F4] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#C06EF3] bg-[#FFAFEE1A]">
+                                                    <img src="./assets/images/search/Breastfeeding.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست‌های رشد و کودک</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 2 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 2 -->
+                                        <div class="bg-gradient-to-b from-white to-[#F6FFA3]/40 rounded-xl border border-[#CED900] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#CED900] bg-[#F8FF6B26]">
+                                                    <img src="./assets/images/search/Brain.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست های هوش و حافظه</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 3 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 3 -->
+                                        <div class="bg-gradient-to-b from-white to-[#E8E8E8]/40 rounded-xl border border-[#997C70] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#997C70] bg-[#997C701A]">
+                                                    <img src="./assets/images/search/Job.svg" alt="" class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست های شغلی و سازمانی</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 4 -->
+                                    <div class="swiper-slide">
+                                        <!-- Category 4 -->
+                                        <div class="bg-gradient-to-b from-white to-[#BEF8FF]/40 rounded-xl border border-[#8DFFFD] p-5 category-card"
+                                            data-category="test">
+                                            <div class="flex flex-col items-center h-full gap-4 py-4">
+                                                <div
+                                                    class="flex items-center justify-center w-fit rounded-full p-2 border-2 border-dotted border-[#1B75E8] bg-[#1B75E826]">
+                                                    <img src="./assets/images/search/School.svg" alt=""
+                                                        class="w-16 h-16">
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <img src="./assets/images/star-empty.svg" alt="Empty Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                    <img src="./assets/images/star-fill.svg" alt="Fill Star"
+                                                        class="w-4 h-4">
+                                                </div>
+                                                <h3 class="text-sm font-normal">تست‌های تحصیلی</h3>
+                                                <button
+                                                    class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
+                                                    مشاهده
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pagination -->
+                                <div class="swiper-pagination !relative !bottom-0"></div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <button id="test-slider-prev"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 transform z-10 group">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.5 3.64583C9.84856 3.64583 3.64583 9.84856 3.64583 17.5C3.64583 25.1514 9.84856 31.3542 17.5 31.3542C25.1514 31.3542 31.3542 25.1514 31.3542 17.5C31.3542 9.84856 25.1514 3.64583 17.5 3.64583ZM2.1875 17.5C2.1875 9.04314 9.04314 2.1875 17.5 2.1875C25.9569 2.1875 32.8125 9.04314 32.8125 17.5C32.8125 25.9569 25.9569 32.8125 17.5 32.8125C9.04314 32.8125 2.1875 25.9569 2.1875 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M25.5208 18.2292H8.75V16.7709H25.5208V18.2292Z" fill="black"
+                                        class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M24.489 17.5L19.9004 12.9114L20.9316 11.8802L26.0358 16.9844C26.3205 17.2692 26.3205 17.7309 26.0358 18.0156L20.9316 23.1198L19.9004 22.0886L24.489 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                </svg>
+                            </button>
+                            <button id="test-slider-next"
+                                class="rotate-180 absolute left-4 top-1/2 -translate-y-1/2 transform z-10 group">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.5 3.64583C9.84856 3.64583 3.64583 9.84856 3.64583 17.5C3.64583 25.1514 9.84856 31.3542 17.5 31.3542C25.1514 31.3542 31.3542 25.1514 31.3542 17.5C31.3542 9.84856 25.1514 3.64583 17.5 3.64583ZM2.1875 17.5C2.1875 9.04314 9.04314 2.1875 17.5 2.1875C25.9569 2.1875 32.8125 9.04314 32.8125 17.5C32.8125 25.9569 25.9569 32.8125 17.5 32.8125C9.04314 32.8125 2.1875 25.9569 2.1875 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M25.5208 18.2292H8.75V16.7709H25.5208V18.2292Z" fill="black"
+                                        class="group-hover:fill-primary transition-colors" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M24.489 17.5L19.9004 12.9114L20.9316 11.8802L26.0358 16.9844C26.3205 17.2692 26.3205 17.7309 26.0358 18.0156L20.9316 23.1198L19.9004 22.0886L24.489 17.5Z"
+                                        fill="black" class="group-hover:fill-primary transition-colors" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-footer pt-20 md:pt-28 pb-4 md:pb-8">
+        <div class="container">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="flex flex-col gap-4 col-span-2 lg:col-span-1 order-1">
+                    <img src="./assets/images/borna-logo.svg" alt="روانشناسی برنا" class="w-[162px] h-auto">
+                    <p class="text-text-dark text-opacity-90 text-sm leading-relaxed text-justify">
+                        روانشناسی برنا با مفهوم ارتقاء ذهنی و روانی مراجعه‌کنندگان، به مراقبت و توسعه افراد و خانواده‌ها
+                        اختصاص دارد. با توجه به اهمیت بهبود روانی در زندگی روزمره، در راستای بهبود کیفیت زندگی افراد کمک
+                        می‌کنند.
+                    </p>
+                    <!-- Social Media -->
+                    <div class="hidden lg:flex items-center justify-center gap-6">
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:border-primary transition-colors">
+                            <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Recommended Tests -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-3 lg:order-2">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">تست‌های پیشنهادی</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست هوش
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تست MBTI
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="flex flex-col items-center pt-4 md:pt-10 order-4 lg:order-3">
+                    <h3 class="text-text-dark text-lg font-medium mb-4">دسترسی سریع</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="index.html"
+                                class="text-secondary text-sm hover:text-primary transition-colors">صفحه
+                                اصلی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درخواست مشاوره
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about-us.html" class="text-secondary text-sm hover:text-primary transition-colors">
+                                درباره‌ی ما
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-secondary text-sm hover:text-primary transition-colors">
+                                تماس با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="flex flex-col justify-center col-span-2 lg:col-span-1 order-2 lg:order-4">
+                    <p class="text-text-dark text-opacity-80 text-sm mb-4">با ثبت ایمیل از آخرین تخفیف با خبر شوید.</p>
+                    <form id="newsletter-form" class="flex">
+                        <div class="relative flex-grow">
+                            <input type="email" placeholder="ایمیل" required
+                                class="w-full pr-2 py-2 bg-transparent border-b border-gray-400 border-opacity-25 focus:border-primary focus:outline-none text-secondary">
+                            <button type="submit" class="absolute left-0 top-1/2 -translate-y-1/2">
+                                <svg width="25" height="18" viewBox="0 0 25 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="group">
+                                    <path
+                                        d="M22 0.999878H3C1.89543 0.999878 1 1.89531 1 2.99988V14.9999C1 16.1044 1.89543 16.9999 3 16.9999H22C23.1046 16.9999 24 16.1044 24 14.9999V2.99988C24 1.89531 23.1046 0.999878 22 0.999878Z"
+                                        stroke="#787878" stroke-width="1.00138" stroke-linecap="round"
+                                        stroke-linejoin="round" class="group-hover:stroke-primary transition-colors" />
+                                    <path d="M23.4109 1.58203L12.4999 10.5L1.58887 1.58203" stroke="#787878"
+                                        stroke-width="1.00138" stroke-linecap="round" stroke-linejoin="round"
+                                        class="group-hover:stroke-primary transition-colors" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="flex lg:hidden items-center gap-6 mt-6">
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/linkedin-icon.svg" alt="LinkedIn" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/twitter-icon.svg" alt="Twitter" class="w-5 h-5">
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center">
+                    <img src="./assets/images/facebook-icon.svg" alt="Facebook" class="w-5 h-5">
+                </a>
+            </div>
+
+            <!-- Separator -->
+            <div class="border my-4 md:my-8"></div>
+
+            <!-- Copyright -->
+            <div class="text-text-dark text-center" dir="ltr">© 2023 All rights reserved</div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="./js/main.js"></script>
+    <script src="./js/search.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const testSwiper = new Swiper('.testSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '#test-slider-next',
+                prevEl: '#test-slider-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>
