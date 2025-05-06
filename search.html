@@ -574,7 +574,7 @@
                         <!-- Mobile Slider -->
                         <div class="md:hidden relative px-20">
                             <!-- Swiper Container -->
-                            <div class="swiper testSwiper">
+                            <div class="swiper bootcampSwiper">
                                 <!-- Swiper Wrapper -->
                                 <div class="swiper-wrapper pb-3">
                                     <!-- Slide 1 -->
@@ -707,7 +707,7 @@
                             </div>
 
                             <!-- Navigation Buttons -->
-                            <button id="test-slider-prev"
+                            <button id="bootcamp-slider-prev"
                                 class="absolute right-4 top-1/2 -translate-y-1/2 transform z-10 group">
                                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -722,7 +722,7 @@
                                         fill="black" class="group-hover:fill-primary transition-colors" />
                                 </svg>
                             </button>
-                            <button id="test-slider-next"
+                            <button id="bootcamp-slider-next"
                                 class="rotate-180 absolute left-4 top-1/2 -translate-y-1/2 transform z-10 group">
                                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -740,7 +740,7 @@
                         </div>
                     </div>
 
-                    <!-- Weblog Categories Section 3 -->
+                    <!-- Blog Categories Section 3 -->
                     <div class="flex flex-col gap-6">
                         <!-- Header -->
                         <div class="flex items-center gap-2 md:gap-3">
@@ -844,7 +844,7 @@
                         <!-- Mobile Slider -->
                         <div class="md:hidden relative px-20">
                             <!-- Swiper Container -->
-                            <div class="swiper testSwiper">
+                            <div class="swiper blogSwiper">
                                 <!-- Swiper Wrapper -->
                                 <div class="swiper-wrapper pb-3">
                                     <!-- Slide 1 -->
@@ -977,7 +977,7 @@
                             </div>
 
                             <!-- Navigation Buttons -->
-                            <button id="test-slider-prev"
+                            <button id="blog-slider-prev"
                                 class="absolute right-4 top-1/2 -translate-y-1/2 transform z-10 group">
                                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -992,7 +992,7 @@
                                         fill="black" class="group-hover:fill-primary transition-colors" />
                                 </svg>
                             </button>
-                            <button id="test-slider-next"
+                            <button id="blog-slider-next"
                                 class="rotate-180 absolute left-4 top-1/2 -translate-y-1/2 transform z-10 group">
                                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -1143,6 +1143,7 @@
     <script src="./js/search.js"></script>
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Test Swiper -->
     <script>
         // Initialize Swiper
         const testSwiper = new Swiper('.testSwiper', {
@@ -1152,6 +1153,40 @@
             navigation: {
                 nextEl: '#test-slider-next',
                 prevEl: '#test-slider-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+    <!-- Bootcamp Swiper -->
+    <script>
+        // Initialize Swiper
+        const bootcampSwiper = new Swiper('.bootcampSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '#bootcamp-slider-next',
+                prevEl: '#bootcamp-slider-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+    <!-- Blog Swiper -->
+    <script>
+        // Initialize Swiper
+        const blogSwiper = new Swiper('.blogSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '#blog-slider-next',
+                prevEl: '#blog-slider-prev',
             },
             pagination: {
                 el: '.swiper-pagination',
