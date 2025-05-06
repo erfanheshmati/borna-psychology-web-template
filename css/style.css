@@ -41,11 +41,9 @@
 .mobile-dropdown-button svg {
   transition: transform 0.2s ease;
 }
-
 .mobile-dropdown-button svg.rotate-180 {
   transform: rotate(180deg);
 }
-
 .mobile-dropdown-content {
   transition: all 0.3s ease;
 }
@@ -73,7 +71,6 @@
   background-color: #ccc;
   opacity: 1;
 }
-
 .swiper .swiper-pagination-bullet-active {
   background-color: #2aff00; /* Primary color */
 }
@@ -82,15 +79,12 @@
 .category-card-pink {
   background: linear-gradient(to bottom, #ffffff, rgba(255, 175, 238, 0.4));
 }
-
 .category-card-blue {
   background: linear-gradient(to bottom, #ffffff, #bef8ff);
 }
-
 .category-card-beige {
   background: linear-gradient(to bottom, #ffffff, #f6e2c8);
 }
-
 .category-card-yellow {
   background: linear-gradient(to bottom, #ffffff, #f6ffa3);
 }
@@ -104,16 +98,13 @@
 .category-button {
   transition: all 0.3s ease;
 }
-
 .category-button:hover h3 {
   color: #4caf50;
 }
-
 .active-category h3 {
   color: #4caf50;
   font-weight: 500;
 }
-
 .active-category::after {
   content: "";
   position: absolute;
