@@ -231,3 +231,4 @@ function convertToPersianNumerals(text) {
     return persianDigits[parseInt(d)];
   });
 }
+

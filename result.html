@@ -31,7 +31,7 @@
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-4 lg:gap-8 px-8 py-2 bg-gray-50 rounded-full border z-10">
+                <div class="hidden md:flex items-center gap-4 xl:gap-8 px-8 py-2 bg-gray-50 rounded-full border z-10">
                     <a href="index.html" class="text-secondary hover:text-primary transition-colors py-2">
                         صفحه اصلی
                     </a>
@@ -289,14 +289,15 @@
                     <!-- Extrovert vs. Introvert -->
                     <div class="space-y-3">
                         <div class="flex items-center justify-center gap-1">
-                            <span class="text-[#00AEFF] text-sm font-bold">
-                                43%
-                            </span>
+                            <span id="ei-percent" class="text-[#00AEFF] text-sm font-bold">43%</span>
                             <span class="text-gray-400 text-sm font-bold">درونگرا</span>
                         </div>
-                        <div class="h-4 bg-white border rounded-lg relative">
-                            <div class="absolute inset-y-0 left-0 w-[46.2%] bg-[#98DEFF] rounded-lg"></div>
-                            <div class="absolute w-4 h-4 bg-[#98DEFF] border-2 border-white rounded-full"
+                        <div id="ei-bar-wrapper"
+                            class="h-4 bg-white border rounded-lg relative cursor-pointer select-none"
+                            style="user-select: none;">
+                            <div id="ei-bar" class="absolute inset-y-0 left-0 bg-[#98DEFF] rounded-lg"
+                                style="width: 46.2%;"></div>
+                            <div id="ei-dot" class="absolute w-4 h-4 bg-[#98DEFF] border-2 border-white rounded-full"
                                 style="left: 43%; top: 50%; transform: translateY(-50%)"></div>
                         </div>
                         <div class="flex justify-between text-gray-500 font-bold">
@@ -307,14 +308,15 @@
                     <!-- Sensing vs. Intuition -->
                     <div class="space-y-3">
                         <div class="flex items-center justify-center gap-1">
-                            <span class="text-[#00FF6A] text-sm font-bold">
-                                43%
-                            </span>
+                            <span id="sn-percent" class="text-[#00FF6A] text-sm font-bold">43%</span>
                             <span class="text-gray-400 text-sm font-bold">حسی</span>
                         </div>
-                        <div class="h-4 bg-white border rounded-lg relative">
-                            <div class="absolute inset-y-0 left-0 w-[46.2%] bg-[#00FF6A] rounded-lg"></div>
-                            <div class="absolute w-4 h-4 bg-[#00FF6A] border-2 border-white rounded-full"
+                        <div id="sn-bar-wrapper"
+                            class="h-4 bg-white border rounded-lg relative cursor-pointer select-none"
+                            style="user-select: none;">
+                            <div id="sn-bar" class="absolute inset-y-0 left-0 bg-[#00FF6A] rounded-lg"
+                                style="width: 46.2%;"></div>
+                            <div id="sn-dot" class="absolute w-4 h-4 bg-[#00FF6A] border-2 border-white rounded-full"
                                 style="left: 43%; top: 50%; transform: translateY(-50%)"></div>
                         </div>
                         <div class="flex justify-between text-gray-500 font-bold">
@@ -325,14 +327,15 @@
                     <!-- Thinking vs. Feeling -->
                     <div class="space-y-3">
                         <div class="flex items-center justify-center gap-1">
-                            <span class="text-[#FFBF00] text-sm font-bold">
-                                43%
-                            </span>
+                            <span id="tf-percent" class="text-[#FFBF00] text-sm font-bold">43%</span>
                             <span class="text-gray-400 text-sm font-bold">منطقی</span>
                         </div>
-                        <div class="h-4 bg-white border rounded-lg relative">
-                            <div class="absolute inset-y-0 left-0 w-[46.2%] bg-[#FFBF00] rounded-lg"></div>
-                            <div class="absolute w-4 h-4 bg-[#FFBF00] border-2 border-white rounded-full"
+                        <div id="tf-bar-wrapper"
+                            class="h-4 bg-white border rounded-lg relative cursor-pointer select-none"
+                            style="user-select: none;">
+                            <div id="tf-bar" class="absolute inset-y-0 left-0 bg-[#FFBF00] rounded-lg"
+                                style="width: 46.2%;"></div>
+                            <div id="tf-dot" class="absolute w-4 h-4 bg-[#FFBF00] border-2 border-white rounded-full"
                                 style="left: 43%; top: 50%; transform: translateY(-50%)"></div>
                         </div>
                         <div class="flex justify-between text-gray-500 font-bold">
@@ -343,14 +346,15 @@
                     <!-- Judging vs. Perceiving -->
                     <div class="space-y-3">
                         <div class="flex items-center justify-center gap-1">
-                            <span class="text-[#FF00E1] text-sm font-bold">
-                                43%
-                            </span>
+                            <span id="jp-percent" class="text-[#FF00E1] text-sm font-bold">43%</span>
                             <span class="text-gray-400 text-sm font-bold">قضاوتی</span>
                         </div>
-                        <div class="h-4 bg-white border rounded-lg relative">
-                            <div class="absolute inset-y-0 left-0 w-[46.2%] bg-[#FF00E1] rounded-lg"></div>
-                            <div class="absolute w-4 h-4 bg-[#FF00E1] border-2 border-white rounded-full"
+                        <div id="jp-bar-wrapper"
+                            class="h-4 bg-white border rounded-lg relative cursor-pointer select-none"
+                            style="user-select: none;">
+                            <div id="jp-bar" class="absolute inset-y-0 left-0 bg-[#FF00E1] rounded-lg"
+                                style="width: 46.2%;"></div>
+                            <div id="jp-dot" class="absolute w-4 h-4 bg-[#FF00E1] border-2 border-white rounded-full"
                                 style="left: 43%; top: 50%; transform: translateY(-50%)"></div>
                         </div>
                         <div class="flex justify-between text-gray-500 font-bold">
@@ -431,12 +435,12 @@
                             تعهدات خود، پایبندید.
                         </li>
                         <li class="text-sm md:text-base text-gray-600 text-justify">
-                             شما از نظم و انضباط فراوانی برخوردارید. به ساختارها و جزئیات، اهمیت زیادی می دهید و آنها را
-                            به خوبی، به خاطر می سپارید. برای انجام هر کاری، مجموعه ای روشن و واضح از استانداردهای منطقی
+                             شما از نظم و انضباط فراوانی برخوردارید. به ساختارها و جزئیات، اهمیت زیادی می دهید و آنها را
+                            به خوبی، به خاطر می سپارید. برای انجام هر کاری، مجموعه ای روشن و واضح از استانداردهای منطقی
                             را دارید که به صورت منظم، آنها را دنبال کرده و از سایرین نیز همین توقع را دارید.
                         </li>
                         <li class="text-sm md:text-base text-gray-600 text-justify">
-                            شما فردی منطقی و تحلیلگر هستید و از قدرت استدلال خوبی برخوردارید؛ همچنین، بسیار واقع بین و
+                            شما فردی منطقی و تحلیلگر هستید و از قدرت استدلال خوبی برخوردارید؛ همچنین، بسیار واقع بین و
                             عملگرا می باشید. به همین دلیل به امور و مسائل حقیقی و عینی، بیش از نظریه ها بها می دهید و
                             پدیده ها و موضوعات از آن جهت برای شما ارزشمندند که کاربرد عملی داشته باشند.
                         </li>
@@ -666,32 +670,42 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid grid-cols-5 gap-5">
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                <div id="ideal-bar-wrapper-1"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="ideal-bar-1" class="absolute bottom-0 w-full bg-[#D4FEFF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                <div id="ideal-bar-wrapper-2"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="ideal-bar-2" class="absolute bottom-0 w-full bg-[#D4FEFF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                <div id="ideal-bar-wrapper-3"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="ideal-bar-3" class="absolute bottom-0 w-full bg-[#D4FEFF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                <div id="ideal-bar-wrapper-4"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="ideal-bar-4" class="absolute bottom-0 w-full bg-[#D4FEFF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#D4FEFF] h-[80%]"></div>
+                                <div id="ideal-bar-wrapper-5"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="ideal-bar-5" class="absolute bottom-0 w-full bg-[#D4FEFF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#D4FEFF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
@@ -704,20 +718,26 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid grid-cols-3 gap-5">
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#E0FFE1] h-[80%]"></div>
+                                <div id="most-bar-wrapper-1"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="most-bar-1" class="absolute bottom-0 w-full bg-[#E0FFE1] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#E0FFE1] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#E0FFE1] h-[80%]"></div>
+                                <div id="most-bar-wrapper-2"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="most-bar-2" class="absolute bottom-0 w-full bg-[#E0FFE1] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#E0FFE1] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#E0FFE1] h-[80%]"></div>
+                                <div id="most-bar-wrapper-3"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="most-bar-3" class="absolute bottom-0 w-full bg-[#E0FFE1] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#E0FFE1] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
@@ -730,26 +750,34 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid grid-cols-4 gap-5">
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#FEE0FF] h-[80%]"></div>
+                                <div id="avg-bar-wrapper-1"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="avg-bar-1" class="absolute bottom-0 w-full bg-[#FEE0FF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#FEE0FF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#FEE0FF] h-[80%]"></div>
+                                <div id="avg-bar-wrapper-2"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="avg-bar-2" class="absolute bottom-0 w-full bg-[#FEE0FF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#FEE0FF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#FEE0FF] h-[80%]"></div>
+                                <div id="avg-bar-wrapper-3"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="avg-bar-3" class="absolute bottom-0 w-full bg-[#FEE0FF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#FEE0FF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#FEE0FF] h-[80%]"></div>
+                                <div id="avg-bar-wrapper-4"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="avg-bar-4" class="absolute bottom-0 w-full bg-[#FEE0FF] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#FEE0FF] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
@@ -762,26 +790,34 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid grid-cols-4 gap-5">
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#FFF5D4] h-[80%]"></div>
+                                <div id="least-bar-wrapper-1"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="least-bar-1" class="absolute bottom-0 w-full bg-[#FFF5D4] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#FFF5D4] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#FFF5D4] h-[80%]"></div>
+                                <div id="least-bar-wrapper-2"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="least-bar-2" class="absolute bottom-0 w-full bg-[#FFF5D4] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#FFF5D4] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#FFF5D4] h-[80%]"></div>
+                                <div id="least-bar-wrapper-3"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="least-bar-3" class="absolute bottom-0 w-full bg-[#FFF5D4] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#FFF5D4] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
                             <div class="flex flex-col items-center gap-3">
-                                <div class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative">
-                                    <div class="absolute bottom-0 w-full bg-[#FFF5D4] h-[80%]"></div>
+                                <div id="least-bar-wrapper-4"
+                                    class="h-44 md:h-56 w-4 bg-gray-200 bg-opacity-66 rounded-t-lg relative cursor-pointer select-none">
+                                    <div id="least-bar-4" class="absolute bottom-0 w-full bg-[#FFF5D4] rounded-t-lg"
+                                        style="height: 80%"></div>
                                 </div>
                                 <div class="bg-[#FFF5D4] text-black text-center text-sm py-1 px-2">ENTJ</div>
                             </div>
@@ -1350,8 +1386,11 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Main JS -->
     <script src="./js/main.js"></script>
+    <!-- Result JS -->
+    <script src="./js/result.js"></script>
+
 </body>
 
 </html>

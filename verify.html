@@ -17,10 +17,10 @@
         <!-- Close Button -->
         <button id="close-button" class="absolute top-4 left-4 z-10 group">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="group-hover:stroke-primary transition-colors" />
-                <path d="M6 6L18 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="group-hover:stroke-primary transition-colors" />
+                <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="stroke-gray-400 md:stroke-white group-hover:stroke-primary transition-colors" />
+                <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="stroke-gray-400 md:stroke-white group-hover:stroke-primary transition-colors" />
             </svg>
         </button>
 
@@ -42,7 +42,7 @@
                 <!-- Verification Form -->
                 <div class="mt-14 space-y-4">
                     <h2 class="text-xl font-medium text-right mb-8">تایید شماره موبایل</h2>
-                    <div class="flex items-center justify-between">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
                         <p class="text-[#3C3D45]">
                             کد ارسال شده به
                             <span id="user-phone">۰۹۱۲۳۴۵۶۷۸۹</span>
@@ -54,24 +54,24 @@
                     </div>
 
                     <!-- OTP Input -->
-                    <div class="flex flex-row-reverse justify-between gap-2 mb-6" dir="ltr">
+                    <div class="flex flex-row-reverse flex-wrap justify-between gap-3 mb-6">
                         <input type="text" maxlength="1"
-                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            class="otp-input w-12 h-12 lg:w-14 lg:h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
                             data-index="5">
                         <input type="text" maxlength="1"
-                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            class="otp-input w-12 h-12 lg:w-14 lg:h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
                             data-index="4">
                         <input type="text" maxlength="1"
-                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            class="otp-input w-12 h-12 lg:w-14 lg:h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
                             data-index="3">
                         <input type="text" maxlength="1"
-                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            class="otp-input w-12 h-12 lg:w-14 lg:h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
                             data-index="2">
                         <input type="text" maxlength="1"
-                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            class="otp-input w-12 h-12 lg:w-14 lg:h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
                             data-index="1">
                         <input type="text" maxlength="1"
-                            class="otp-input w-14 h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
+                            class="otp-input w-12 h-12 lg:w-14 lg:h-14 border border-[#E7E7E8] rounded-lg text-center text-xl focus:outline-[#28CB16]"
                             data-index="0" autofocus>
                     </div>
 
@@ -110,16 +110,10 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Main JS -->
     <script src="./js/main.js"></script>
-    <script src="./js/auth.js"></script>
-    <script>
-        // Close button functionality
-        document.getElementById('close-button').addEventListener('click', function () {
-            // Navigate back to the previous page
-            window.history.back();
-        });
-    </script>
+    <!-- Verify JS -->
+    <script src="./js/verify.js"></script>
 </body>
 
 </html>
